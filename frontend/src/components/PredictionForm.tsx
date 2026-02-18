@@ -86,9 +86,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
         if (missing.length > 0) {
             setError(`Please fill required fields: ${missing.join(', ')}`);
             setLoading(false);
-            if (formRef.current) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+            setLoading(false);
             return;
         }
         try {
@@ -149,9 +147,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
         } catch (err: any) {
             console.error(err);
             setError(err.message || "Prediction failed. Please check inputs.");
-            if (formRef.current) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+
         } finally {
             setLoading(false);
         }
@@ -322,17 +318,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
     return (
         <div className="mt-8 w-full max-w-4xl mx-auto">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-10">
-                <AnimatePresence>
-                    {error && (
-                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
-                            <Alert variant="destructive" className="bg-amber-950/90 border-2 border-amber-500 text-amber-100 shadow-lg rounded-2xl backdrop-blur-md">
-                                <AlertCircle className="h-4 w-4 text-amber-500" />
-                                <AlertTitle className="text-amber-100 font-bold">Input Error</AlertTitle>
-                                <AlertDescription className="text-amber-200/90 font-medium">{error}</AlertDescription>
-                            </Alert>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+
                 <Card className="overflow-hidden border-2 border-[#044e22] bg-[#badcc4] shadow-xl shadow-[#044e22]/5 rounded-3xl">
                     <CardContent className="p-0">
                         <div className="flex items-center gap-4 mb-8 pl-6">
@@ -356,6 +342,17 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                         </div>
                     </CardContent>
                 </Card>
+                <AnimatePresence>
+                    {error && (
+                        <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}>
+                            <Alert variant="destructive" className="bg-amber-950/90 border-2 border-amber-500 text-amber-100 shadow-lg rounded-2xl backdrop-blur-md">
+                                <AlertCircle className="h-4 w-4 text-amber-500" />
+                                <AlertTitle className="text-amber-100 font-bold">Input Error</AlertTitle>
+                                <AlertDescription className="text-amber-200/90 font-medium">{error}</AlertDescription>
+                            </Alert>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
                 <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
                     <Button
                         type="submit"
@@ -426,14 +423,14 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                                                 <div className="p-8 md:p-10 m-6 rounded-3xl bg-[#044e22] backdrop-blur-sm border border-[#044e22]/20 shadow-xl">
                                                     <ShapChart data={filteredExplanation} />
                                                     { }
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 border-t border-[#BBF2C3]/30 pt-8">
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 border-t border-[#f2efc9]/30 pt-8">
                                                         {filteredExplanation.map((item: any, idx: number) => (
-                                                            <div key={idx} className="bg-[#22401A] border border-[#BBF2C3] p-4 rounded-xl flex justify-between items-center shadow-lg shadow-[#000000]/20 hover:scale-[1.02] transition-transform duration-300">
+                                                            <div key={idx} className="bg-[#22401A] border border-[#f2efc9] p-4 rounded-xl flex justify-between items-center shadow-lg shadow-[#000000]/20 hover:scale-[1.02] transition-transform duration-300">
                                                                 <div>
-                                                                    <span className="text-[#BBF2C3] font-bold block text-sm mb-1">{item.name}</span>
-                                                                    <span className="text-[#BBF2C3] text-[10px] uppercase tracking-wider font-semibold">Impact</span>
+                                                                    <span className="text-[#f2efc9] font-bold block text-sm mb-1">{item.name}</span>
+                                                                    <span className="text-[#f2efc9] text-[10px] uppercase tracking-wider font-semibold">Impact</span>
                                                                 </div>
-                                                                <div className={`text-lg font-black ${item.value >= 0 ? 'text-[#BBF2C3]' : 'text-[#D9B341]'} `}>
+                                                                <div className={`text-lg font-black ${item.value >= 0 ? 'text-[#adc74d]' : 'text-[#badcc4]'} `}>
                                                                     {item.value >= 0 ? '+' : ''}{formatPakistaniPrice(item.value)}
                                                                 </div>
                                                             </div>
