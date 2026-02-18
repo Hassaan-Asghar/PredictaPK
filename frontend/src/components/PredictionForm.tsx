@@ -35,7 +35,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
     const formRef = useRef<HTMLFormElement>(null);
     useEffect(() => {
         const serviceType = category === 'buy' ? 'house_buy' : category === 'rent' ? 'house_rent' : category;
-        fetch(`http:
+        fetch(`http://localhost:8000/api/options/${serviceType}`)
             .then(res => res.json())
             .then(data => {
                 setOptions({ raw_current: data });
@@ -87,7 +87,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             setError(`Please fill required fields: ${missing.join(', ')}`);
             setLoading(false);
             if (formRef.current) {
-                formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
             return;
         }
@@ -150,7 +150,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             console.error(err);
             setError(err.message || "Prediction failed. Please check inputs.");
             if (formRef.current) {
-                formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         } finally {
             setLoading(false);
@@ -206,9 +206,9 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                         {renderInputLabel(input.label, input.req)}
                         <div className="relative group">
                             {input.type === 'combo' ? (
-                                <Combobox options={toOptions(input.opts)} value={formData[input.field]} onChange={v => handleChange(input.field, v)} placeholder={`Select ${input.label}`} disabled={input.disabled} />
+                                <Combobox options={toOptions(input.opts)} value={formData[input.field]} onChange={v => handleChange(input.field, v)} placeholder={`Select ${input.label} `} disabled={input.disabled} />
                             ) : (
-                                <NumberInput className={inputClasses} placeholder={`Enter ${input.label}`} value={formData[input.field] || ''} onChange={val => handleChange(input.field, val)} />
+                                <NumberInput className={inputClasses} placeholder={`Enter ${input.label} `} value={formData[input.field] || ''} onChange={val => handleChange(input.field, val)} />
                             )}
                         </div>
                     </motion.div>
@@ -257,9 +257,9 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                         {renderInputLabel(input.label, input.req)}
                         <div className="relative group">
                             {input.type === 'combo' ? (
-                                <Combobox options={toOptions(input.opts)} value={formData[input.field]} onChange={v => handleChange(input.field, v)} placeholder={`Select ${input.label}`} disabled={input.disabled} />
+                                <Combobox options={toOptions(input.opts)} value={formData[input.field]} onChange={v => handleChange(input.field, v)} placeholder={`Select ${input.label} `} disabled={input.disabled} />
                             ) : (
-                                <NumberInput className={inputClasses} placeholder={`Enter ${input.label}`} value={formData[input.field] || ''} onChange={val => handleChange(input.field, val)} />
+                                <NumberInput className={inputClasses} placeholder={`Enter ${input.label} `} value={formData[input.field] || ''} onChange={val => handleChange(input.field, val)} />
                             )}
                         </div>
                     </motion.div>
@@ -303,7 +303,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                     <div className="flex gap-2">
                         <NumberInput className={inputClasses} value={formData.Area || ''} onChange={val => handleChange('Area', val)} />
                         <Select onValueChange={v => handleChange('AreaUnit', v)} value={formData.AreaUnit}>
-                            <SelectTrigger className={`w-[130px] ${selectTriggerClasses}`}><SelectValue placeholder="Unit" /></SelectTrigger>
+                            <SelectTrigger className={`w-[130px] ${selectTriggerClasses} `}><SelectValue placeholder="Unit" /></SelectTrigger>
                             <SelectContent className={selectContentClasses}><SelectItem value="Marla" className="focus:bg-[#044e22] focus:text-white text-[#044e22] cursor-pointer">Marla</SelectItem><SelectItem value="Kanal" className="focus:bg-[#044e22] focus:text-white text-[#044e22] cursor-pointer">Kanal</SelectItem><SelectItem value="SqFt" className="focus:bg-[#044e22] focus:text-white text-[#044e22] cursor-pointer">SqFt</SelectItem></SelectContent>
                         </Select>
                     </div>
@@ -380,7 +380,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                         transition={{ type: "spring", stiffness: 200, damping: 20 }}
                         className="mt-16"
                     >
-                        {}
+                        { }
                         <div className="relative p-[2px] rounded-3xl bg-gradient-to-br from-[#4ea96b] via-[#044e22] to-[#4ea96b] shadow-2xl shadow-[#044e22]/20">
                             <div className="absolute inset-0 bg-[#4ea96b]/10 blur-3xl opacity-30" />
                             <div className="relative text-center p-6 bg-[#badcc4] rounded-[23px] overflow-hidden">
@@ -402,7 +402,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                                 </motion.div>
                             </div>
                         </div>
-                        {}
+                        { }
                         {(() => {
                             const explanationData = result.explanation || [];
                             if (explanationData.length === 0) return null;
@@ -425,7 +425,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                                                 </div>
                                                 <div className="p-8 md:p-10 m-6 rounded-3xl bg-[#044e22] backdrop-blur-sm border border-[#044e22]/20 shadow-xl">
                                                     <ShapChart data={filteredExplanation} />
-                                                    {}
+                                                    { }
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 border-t border-[#BBF2C3]/30 pt-8">
                                                         {filteredExplanation.map((item: any, idx: number) => (
                                                             <div key={idx} className="bg-[#22401A] border border-[#BBF2C3] p-4 rounded-xl flex justify-between items-center shadow-lg shadow-[#000000]/20 hover:scale-[1.02] transition-transform duration-300">
@@ -433,7 +433,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                                                                     <span className="text-[#BBF2C3] font-bold block text-sm mb-1">{item.name}</span>
                                                                     <span className="text-[#BBF2C3] text-[10px] uppercase tracking-wider font-semibold">Impact</span>
                                                                 </div>
-                                                                <div className={`text-lg font-black ${item.value >= 0 ? 'text-[#BBF2C3]' : 'text-[#D9B341]'}`}>
+                                                                <div className={`text-lg font-black ${item.value >= 0 ? 'text-[#BBF2C3]' : 'text-[#D9B341]'} `}>
                                                                     {item.value >= 0 ? '+' : ''}{formatPakistaniPrice(item.value)}
                                                                 </div>
                                                             </div>

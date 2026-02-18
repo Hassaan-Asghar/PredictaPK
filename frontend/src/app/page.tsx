@@ -103,7 +103,7 @@ export default function Dashboard() {
           <DashboardTabs />
         </motion.div>
         <footer className="mt-20 text-center border-t border-emerald-100 pt-8">
-          <p className="text-gray-500 text-sm font-medium hover:text-emerald-600 transition-colors cursor-pointer">
+          <p className="text-gray-500 text-sm font-medium hover:text-[#044e22] transition-colors cursor-pointer">
             © {new Date().getFullYear()} Predicta PK. Precision Intelligence.
           </p>
         </footer>
