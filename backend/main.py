@@ -56,6 +56,62 @@ def load_artifacts():
 class PredictionInput(BaseModel):
     service_type: str 
     data: Dict[str, Any]
+def get_price_trends(model, base_df, service_name):
+    """
+    Generates a trend of predictions by varying the 'year' feature.
+    For Real Estate (where 'year' is not a feature), uses a synthetic inflation rate.
+    """
+    try:
+        trends = []
+        
+        # synthetic trends for real estate (since dataset has no year)
+        if service_name in ['house_buy', 'house_rent']:
+            current_year = 2024 # Default base if year not present
+            if 'year' in base_df.columns:
+                current_year = int(base_df['year'].iloc[0])
+            
+            # Annual growth rates (approximate for Pakistan market)
+            rate = 0.10 if service_name == 'house_buy' else 0.07 
+            
+            print(f"Generating synthetic trends for {service_name} with rate {rate}")
+            
+            base_pred = model.predict(base_df)[0]
+            year_range = range(current_year - 4, current_year + 2)
+            
+            for y in year_range:
+                # Formula: Price * (1 + rate)^(year - current_year)
+                # If year is in past, exponent is negative, price is lower.
+                # If year is future, exponent is positive, price is higher.
+                factor = (1 + rate) ** (y - current_year)
+                adjusted_price = base_pred * factor
+                trends.append({"year": y, "price": round(adjusted_price, 2)})
+            
+            return trends
+
+        # Standard ML-based trends for Cars/Bikes (where year IS a feature)
+        if 'year' not in base_df.columns:
+            return []
+        
+        current_year = int(base_df['year'].iloc[0])
+        print(f"Calculating trends for {service_name}, base year: {current_year}")
+        year_range = range(current_year - 4, current_year + 2)
+        
+        for y in year_range:
+            temp_df = base_df.copy()
+            temp_df['year'] = y
+            # Clean data again just in case (though it's already clean)
+            try:
+                pred = model.predict(temp_df)[0]
+                trends.append({"year": y, "price": round(pred, 2)})
+            except Exception as e_inner:
+                print(f"Trend prediction failed for year {y}: {e_inner}")
+                continue
+                
+        return trends
+    except Exception as e:
+        print(f"Trend calculation failed: {e}")
+        return []
+
 def get_shap_explanation(model_pipeline, input_df, service_name=None):
     """
     Calculates SHAP values safely with caching and sparse matrix support.
@@ -137,7 +193,8 @@ def predict(input_data: PredictionInput):
         return {
             "prediction": round(prediction_value, 2),
             "currency": "PKR",
-            "explanation": xai_data
+            "explanation": xai_data,
+            "trends": get_price_trends(model, df, service)
         }
     except Exception as e:
         print(f"Prediction Error: {e}")
