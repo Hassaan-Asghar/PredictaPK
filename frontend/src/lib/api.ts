@@ -39,11 +39,11 @@ export const fetchOptions = async () => {
             bikes: bike.data.make_model_tree,
             locations: {
                 car: car.data.city,
-                bike: bike.data.city, 
+                bike: bike.data.city,
                 property: uniqueCities
             },
             property_tree: propertyTree,
-            car_location_tree: car.data.city_location_tree, 
+            car_location_tree: car.data.city_location_tree,
             property_areas: uniqueAreas,
             car_options: {
                 registered: car.data.registered || [],
@@ -69,7 +69,7 @@ export const predictCar = async (data: any): Promise<PredictionResult> => {
         registered: data.RegisteredIn,
         color: data.Color,
         assembly: data.Assembly,
-        city: data.Location 
+        city: data.Location
     };
     const response = await axios.post(`${API_BASE_URL}/predict`, {
         service_type: 'car',
@@ -83,10 +83,10 @@ export const predictCar = async (data: any): Promise<PredictionResult> => {
 export const predictBike = async (data: any): Promise<PredictionResult> => {
     const backendData = {
         make: data.Make,
-        model: data.BikeName, 
+        model: data.BikeName,
         year: Number(data.Year),
         mileage: Number(data.Mileage),
-        engine_capacity: Number(data.EngineCapacity.toString().replace(' cc', '')), 
+        engine_capacity: Number(data.EngineCapacity.toString().replace(' cc', '')),
         city: data.City
     };
     const response = await axios.post(`${API_BASE_URL}/predict`, {
@@ -106,7 +106,7 @@ export const predictProperty = async (data: any, type: 'buy' | 'rent'): Promise<
         type: data.Type,
         area: Number(data.Area),
         bedrooms: Number(data.Bedrooms),
-        baths: Number(data.Bathrooms) 
+        baths: Number(data.Bathrooms)
     };
     const response = await axios.post(`${API_BASE_URL}/predict`, {
         service_type: serviceType,
@@ -116,4 +116,18 @@ export const predictProperty = async (data: any, type: 'buy' | 'rent'): Promise<
         price: response.data.prediction,
         explanation: response.data.explanation
     };
+};
+
+export const getRecommendations = async (category: string, budget: number, filters: any = {}) => {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/recommend`, {
+            service_type: category,
+            budget: budget,
+            filters: filters
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching recommendations:", error);
+        return [];
+    }
 };

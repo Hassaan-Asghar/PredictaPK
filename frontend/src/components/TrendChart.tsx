@@ -10,21 +10,16 @@ import {
     Area,
     AreaChart
 } from 'recharts';
-
 interface TrendProps {
     data: { year: number; price: number }[];
 }
-
 const TrendChart: React.FC<TrendProps> = ({ data }) => {
     if (!data || data.length === 0) return null;
-
-    // Formatting currency
     const formatPrice = (value: number) => {
         if (value >= 10000000) return `${(value / 10000000).toFixed(2)} Cr`;
         if (value >= 100000) return `${(value / 100000).toFixed(2)} Lac`;
         return value.toLocaleString();
     };
-
     return (
         <div className="w-full h-[300px] mt-4">
             <ResponsiveContainer width="100%" height="100%">
@@ -76,5 +71,4 @@ const TrendChart: React.FC<TrendProps> = ({ data }) => {
         </div>
     );
 };
-
 export default TrendChart;

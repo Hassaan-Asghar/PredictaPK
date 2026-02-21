@@ -1,5 +1,5 @@
 
-#  PredictaPK | AI Powered Price Valuation System
+# PredictaPK | AI Powered Price Valuation System
 
 PredictaPK is a sophisticated full-stack AI application designed to provide accurate market value predictions for **Cars**, **Bikes**, **Houses (Buy/Rent)** in Pakistan. By leveraging advanced machine learning models (XGBoost/RandomForest) and **Explainable AI (SHAP)**, it not only predicts prices but also explains *why*, offering transparency to users.
 
@@ -12,19 +12,25 @@ PredictaPK is a sophisticated full-stack AI application designed to provide accu
 
 *   **Multi-Category Predictions**: Instant valuation for Cars, Motorcycles, and Real Estate (Sales & Rentals).
 *   **Explainable AI (XAI)**: Integrated **SHAP (SHapley Additive exPlanations)** visualization to break down how each feature (e.g., Mileage, Location, Model Year) contributes to the final price.
-*   **Smart Input Forms**: Dynamic forms with searchable dropdowns (`Combobox`), auto-complete, and dependent fields (e.g., Locations valid for a selected City).
+*   **Real Data Budget Planner**: Enter a maximum budget to find real, best-matching vehicles or properties from the datasets (+/- 15% precise filtering).
+*   **Market Trends Dashboard**: View dynamic market intelligence such as Top Performing Areas, Vehicle Depreciation, and Category Breakdowns.
+*   **Investment ROI Calculator**: Automatically calculates and displays Annual Rental Yield % when valuing a property for buying.
+*   **Comprehensive Search History**: Track your recent queries automatically, easily recall past valuations, and compare different assets side-by-side.
+*   **Generate PDF Reports**: Download professional, full-page PDF comparison reports of your predictive valuations.
+*   **Share via WhatsApp**: Instantly share your valuation insights directly with friends or clients via a specialized WhatsApp deep link.
+*   **Smart Input Forms & Validation**: Dynamic forms with searchable dropdowns (`Combobox`), auto-complete, auto-scroll to missing fields, and robust error handling.
 *   **Modern UI/UX**: Built with a "Midnight Luxe" aesthetic using **Tailwind CSS v4** and **Framer Motion** for smooth animations and transitions.
-*   **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile experiences.
 
 ## Tech Stack
 
 ### **Frontend**
-*   **Framework**: Next.js 16 (App Router)
+*   **Framework**: Next.js 16.1 (App Router)
 *   **Library**: React 19
 *   **Styling**: Tailwind CSS v4, Lucide React (Icons)
 *   **Animation**: Framer Motion
-*   **Charts**: Recharts (for SHAP visualizations)
-*   **HTTP Client**: Axios/Fetch API
+*   **Charts**: Recharts (for SHAP visualizations and Trends)
+*   **PDF Generation**: html2canvas & jsPDF
+*   **HTTP Client**: Axios
 
 ### **Backend**
 *   **Framework**: FastAPI (Python)
@@ -40,21 +46,23 @@ PredictaPK/
 ├── backend/                # Python FastAPI Backend
 │   ├── main.py             # Entry point for the API
 │   ├── requirements.txt    # Python dependencies
-│   └── ...
+│   ├── ...
 ├── frontend/               # Next.js Frontend
 │   ├── src/
-│   │   ├── app/            # App Router pages
-│   │   ├── components/     # Reusable UI components (PredictionForm, ShapChart)
-│   │   └── lib/            # Utilities and helpers
+│   │   ├── app/            # App Router pages (page.tsx, globals.css)
+│   │   ├── components/     # UI components (PredictionForm, Dashboards, Modals)
+│   │   ├── lib/            # Utilities (api.ts, env.ts, utils.ts)
 │   ├── public/             # Static assets
 │   ├── package.json        # Node dependencies
-│   └── ...
-├── models/                 # Pre-trained ML models (.pkl) and encoders
+│   ├── ...
+├── models/                 # Pre-trained ML models (.pkl) and JSON artifacts
 │   ├── model_car.pkl
-│   ├── model_bike.pkl
-│   ├── model_house_buy.pkl
-│   └── ...
-├── dataset/                # Raw and processed datasets (CSV)
+│   ├── features_car.json
+│   ├── ...
+├── dataset/                # Raw and processed datasets (CSV) used for Real Budget Planner
+│   ├── cars dataset.csv
+│   ├── bikes dataset.csv
+│   ├── ...
 └── README.md               # Project Documentation
 ```
 
@@ -89,7 +97,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # Install dependencies
-pip install fastapi "uvicorn[standard]" pandas joblib scikit-learn shap numpy
+pip install fastapi "uvicorn[standard]" pandas joblib scikit-learn shap numpy requests
 # OR if requirements.txt exists:
 pip install -r requirements.txt
 
@@ -129,12 +137,6 @@ The FastAPI backend can be easily deployed on **Railway** or **Render**.
 3.  Set the `Root Directory` to `backend` (or configuring the build command to allow running from root).
 4.  **Build Command**: `pip install -r requirements.txt`
 5.  **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-
-## Future Improvements
-*   [ ] User Authentication (Save prediction history).
-*   [ ] Historical Price Trends analysis.
-*   [ ] Comparison tool for multiple vehicles/properties.
-*   [ ] Dark/Light mode toggle.
 
 ---
 

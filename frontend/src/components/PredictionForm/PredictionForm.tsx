@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles, AlertCircle, Car, Bike, Home, Building, TrendingUp, Clock, DollarSign } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-
 import jsPDF from 'jspdf';
-
 import ComparisonView from '../ComparisonView';
 import CarInputs from './CarInputs';
 import BikeInputs from './BikeInputs';
@@ -15,12 +13,14 @@ import PropertyInputs from './PropertyInputs';
 import PredictionResult from './PredictionResult';
 import MarketTrends from '../MarketTrends';
 import RecommendationModal from './RecommendationModal';
-
+import { getRecommendations } from '@/lib/api';
 interface PredictionFormProps {
     category: 'car' | 'bike' | 'buy' | 'rent';
+    history: any[];
+    setHistory: React.Dispatch<React.SetStateAction<any[]>>;
+    viewMode?: 'predict' | 'budget';
 }
-
-const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
+const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setHistory, viewMode }) => {
     const [options, setOptions] = useState<any>({ raw_current: {} });
     const currentYear = new Date().getFullYear();
     const [formData, setFormData] = useState<any>({});
@@ -28,33 +28,28 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
     const [result, setResult] = useState<any>(null);
     const [error, setError] = useState<string | null>(null);
     const [comparisons, setComparisons] = useState<any[]>([]);
-    const [history, setHistory] = useState<any[]>([]);
-    const [mode, setMode] = useState<'predict' | 'budget'>('predict');
+    const [mode, setMode] = useState<'predict' | 'budget'>(viewMode || 'predict');
     const [budgetResult, setBudgetResult] = useState<any[]>([]);
+    useEffect(() => {
+        if (viewMode) {
+            setMode(viewMode);
+            setBudgetResult([]);
+            setResult(null);
+            setSelectedRecommendation(null);
+        }
+    }, [viewMode]);
     const [selectedRecommendation, setSelectedRecommendation] = useState<any>(null);
     const [isComparisonOpen, setIsComparisonOpen] = useState(false);
     const formRef = useRef<HTMLFormElement>(null);
-
-    // Load comparisons and history from local storage
     useEffect(() => {
         const savedComparisons = localStorage.getItem('comparisons');
         if (savedComparisons) {
             try { setComparisons(JSON.parse(savedComparisons)); } catch (e) { console.error(e); }
         }
-        const savedHistory = localStorage.getItem('predicta_history');
-        if (savedHistory) {
-            try { setHistory(JSON.parse(savedHistory)); } catch (e) { console.error(e); }
-        }
     }, []);
-
     useEffect(() => {
         localStorage.setItem('comparisons', JSON.stringify(comparisons));
     }, [comparisons]);
-
-    useEffect(() => {
-        localStorage.setItem('predicta_history', JSON.stringify(history));
-    }, [history]);
-
     const addToComparison = () => {
         if (result && formData) {
             const newItem = { formData: { ...formData }, prediction: result.prediction, explanation: result.explanation };
@@ -65,162 +60,128 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             if (!exists) setComparisons(prev => [...prev, newItem]);
         }
     };
-
     const removeFromComparison = (index: number) => {
         setComparisons(prev => prev.filter((_, i) => i !== index));
     };
-
-    const handleBudgetSearch = (e: React.FormEvent | React.MouseEvent) => {
+    const handleBudgetSearch = async (e: React.FormEvent | React.MouseEvent) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
-
-        // Low Budget Check
+        let required: string[] = ['MaxBudget'];
+        if (category === 'car') required.push('Make', 'Model', 'RegisteredIn', 'Transmission');
+        else if (category === 'bike') required.push('Make', 'Model', 'City'); 
+        else if (category === 'rent' || category === 'buy') required.push('City', 'Location', 'Type', 'Area', 'AreaUnit');
+        const missing = required.filter(f => !formData[f]);
+        if (missing.length > 0) {
+            const friendlyNames: any = {
+                MaxBudget: 'Max Budget',
+                RegisteredIn: 'Registered In',
+                City: category === 'bike' ? 'Registered' : 'City',
+                AreaUnit: 'Area & Unit'
+            };
+            const missingLabels = missing.map(f => friendlyNames[f] || f);
+            setError(`Please fill required fields: ${missingLabels.join(', ')}`);
+            setLoading(false);
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
+            return;
+        }
+        if (isNaN(Number(formData.MaxBudget)) || Number(formData.MaxBudget) <= 0) {
+            setError('Please enter a valid numerical budget greater than 0.');
+            setLoading(false);
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
+            return;
+        }
         const budget = Number(formData.MaxBudget);
         let minBudget = 0;
         if (category === 'car') minBudget = 500000;
         if (category === 'bike') minBudget = 20000;
         if (category === 'buy') minBudget = 1000000;
         if (category === 'rent') minBudget = 10000;
-
         if (budget > 0 && budget < minBudget) {
             setError(`Budget is too low for ${category === 'buy' ? 'property' : category}. Minimum recommended: PKR ${minBudget.toLocaleString()}`);
             setLoading(false);
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
             return;
         }
-
-        setTimeout(() => {
-            interface BudgetResult {
-                name: string;
-                price: number;
-                year?: number;
-                location?: string;
-                specs?: { [key: string]: string | number }; // New field for detailed specs 
-            }
-            let results: BudgetResult[] = [];
-
-            // Enhanced Mock Logic: Use form inputs to filter/suggest
+        try {
+            const filters: any = {};
+            let apiCategory = category;
             if (category === 'car') {
-                const make = formData.Make || 'Toyota';
-                const model = formData.Model;
-                const city = formData.City || 'Lahore';
-
-                // Base pool of cars
-                let pool = [
-                    { name: `Toyota Corolla Altis 1.6`, price: 4500000, year: 2019, location: city, specs: { 'Engine': '1600 cc', 'Transmission': 'Automatic', 'Mileage': '45,000 km', 'Assembly': 'Local' } },
-                    { name: `Honda City 1.5 Aspire`, price: 4200000, year: 2020, location: city, specs: { 'Engine': '1500 cc', 'Transmission': 'Manual', 'Mileage': '30,000 km', 'Assembly': 'Local' } },
-                    { name: `Suzuki Cultus VXL`, price: 3500000, year: 2022, location: city, specs: { 'Engine': '1000 cc', 'Transmission': 'AGS', 'Mileage': '20,000 km', 'Assembly': 'Local' } },
-                    { name: `Honda Civic Oriel`, price: 6500000, year: 2020, location: city, specs: { 'Engine': '1800 cc', 'Transmission': 'Automatic', 'Mileage': '40,000 km', 'Assembly': 'Local' } },
-                    { name: `Suzuki Alto VXR`, price: 2800000, year: 2023, location: city, specs: { 'Engine': '660 cc', 'Transmission': 'Stic', 'Mileage': '10,000 km', 'Assembly': 'Local' } },
-                ];
-
-                // If Model is selected, GENRATE variations of that specific model
-                if (model) {
-                    results = [
-                        { name: `${make} ${model}`, price: budget * 0.95, year: 2022, location: city, specs: { 'Engine': 'Standard', 'Transmission': 'Automatic', 'Mileage': '25,000 km', 'Assembly': 'Local' } },
-                        { name: `${make} ${model}`, price: budget * 0.85, year: 2020, location: city, specs: { 'Engine': 'Standard', 'Transmission': 'Automatic', 'Mileage': '55,000 km', 'Assembly': 'Local' } },
-                        { name: `${make} ${model}`, price: budget * 0.75, year: 2018, location: city, specs: { 'Engine': 'Standard', 'Transmission': 'Manual', 'Mileage': '85,000 km', 'Assembly': 'Local' } },
-                        { name: `${make} ${model}`, price: budget * 0.65, year: 2017, location: city, specs: { 'Engine': 'Standard', 'Transmission': 'Manual', 'Mileage': '100,000 km', 'Assembly': 'Local' } },
-                        { name: `${make} ${model} (Good Condition)`, price: budget * 0.9, year: 2021, location: city, specs: { 'Engine': 'Standard', 'Transmission': 'Automatic', 'Mileage': '40,000 km', 'Assembly': 'Local' } },
-                    ];
-                }
-                // Else if Make is selected, filter/generate for that Make
-                else if (formData.Make) {
-                    results = pool.filter(r => r.name.includes(formData.Make));
-                    // Fill with generative data if pool is empty
-                    if (results.length < 3) {
-                        results.push(
-                            { name: `${make} Sedan`, price: budget * 0.9, year: 2021, location: city, specs: { 'Transmission': 'Automatic', 'Mileage': '30,000 km' } },
-                            { name: `${make} Hachback`, price: budget * 0.7, year: 2019, location: city, specs: { 'Transmission': 'Manual', 'Mileage': '60,000 km' } },
-                            { name: `${make} SUV`, price: budget * 1.1, year: 2020, location: city, specs: { 'Transmission': 'Automatic', 'Mileage': '45,000 km' } }
-                        );
-                    }
-                } else {
-                    results = pool;
-                }
-
+                if (formData.Make) filters.make = formData.Make;
+                if (formData.Model) filters.model = formData.Model;
+                if (formData.City) filters.city = formData.City;
             } else if (category === 'bike') {
-                const make = formData.Make || 'Honda';
-                const model = formData.Model;
-                const city = formData.City || 'Lahore';
-
-                if (model) {
-                    results = [
-                        { name: `${make} ${model}`, price: budget * 0.98, year: 2024, location: city, specs: { 'Start': 'Self Start', 'Mileage': '1,000 km', 'Condition': 'Like New' } },
-                        { name: `${make} ${model}`, price: budget * 0.9, year: 2023, location: city, specs: { 'Start': 'Kick Start', 'Mileage': '15,000 km', 'Condition': 'Excellent' } },
-                        { name: `${make} ${model}`, price: budget * 0.8, year: 2022, location: city, specs: { 'Start': 'Kick Start', 'Mileage': '25,000 km', 'Condition': 'Good' } },
-                        { name: `${make} ${model}`, price: budget * 0.7, year: 2021, location: city, specs: { 'Start': 'Kick Start', 'Mileage': '40,000 km', 'Condition': 'Fair' } },
-                        { name: `${make} ${model}`, price: budget * 0.6, year: 2020, location: city, specs: { 'Start': 'Kick Start', 'Mileage': '55,000 km', 'Condition': 'Used' } },
-                    ];
-                } else {
-                    results = [
-                        { name: `${make} CG 125`, price: budget * 0.9, year: 2023, location: city, specs: { 'Engine': '125 cc', 'Start': 'Kick Start', 'Mileage': '5,000 km' } },
-                        { name: `${make} CD 70`, price: budget * 0.5, year: 2024, location: city, specs: { 'Engine': '70 cc', 'Start': 'Kick Start', 'Mileage': '2,000 km' } },
-                        { name: `Yamaha YBR 125`, price: budget * 0.95, year: 2022, location: city, specs: { 'Engine': '125 cc', 'Start': 'Self Start', 'Mileage': '12,000 km' } },
-                        { name: `Suzuki GS 150`, price: budget * 0.85, year: 2021, location: city, specs: { 'Engine': '150 cc', 'Start': 'Self Start', 'Mileage': '18,000 km' } }
-                    ].filter(r => r.name.includes(make) || !formData.Make);
-                }
-
-            } else {
-                const loc = formData.Location || 'DHA';
-                const area = formData.Area ? `${formData.Area} ${formData.AreaUnit}` : '5 Marla';
-
-                if (category === 'rent') {
-                    results = [
-                        { name: `${area} House (Full)`, location: `${loc}`, price: budget * 0.95, specs: { 'Bedrooms': 3, 'Baths': 4, 'Type': 'Double Story', 'Area': area } },
-                        { name: `${area} Upper Portion`, location: `${loc}`, price: budget * 0.4, specs: { 'Bedrooms': 2, 'Baths': 2, 'Type': 'Upper Portion', 'Area': area } },
-                        { name: `${area} Lower Portion`, location: `${loc}`, price: budget * 0.5, specs: { 'Bedrooms': 2, 'Baths': 2, 'Type': 'Lower Portion', 'Area': area } },
-                        { name: `Luxury Apartment`, location: `${loc}`, price: budget * 0.6, specs: { 'Bedrooms': 2, 'Baths': 2, 'Type': 'Apartment', 'Area': '1200 SqFt' } },
-                    ];
-                } else {
-                    // Buy Logic
-                    results = [
-                        { name: `${area} House`, location: `${loc}`, price: budget * 0.98, specs: { 'Bedrooms': 3, 'Baths': 4, 'Type': 'Double Story', 'Area': area } },
-                        { name: `${area} House (Corner)`, location: `${loc}`, price: budget * 1.1, specs: { 'Bedrooms': 4, 'Baths': 4, 'Type': 'Double Story', 'Area': area, 'Feature': 'Corner Plot' } },
-                        { name: `${area} House (Standard)`, location: `${loc}`, price: budget * 0.85, specs: { 'Bedrooms': 3, 'Baths': 3, 'Type': 'Single Story', 'Area': area } },
-                        { name: `${area} Plot`, location: `${loc}`, price: budget * 0.6, specs: { 'Type': 'Residential Plot', 'Area': area, 'Possession': 'Yes' } },
-                        { name: `${area} Plot (File)`, location: `${loc}`, price: budget * 0.5, specs: { 'Type': 'Plot File', 'Area': area, 'Possession': 'No' } },
-                    ];
-                }
+                if (formData.Make) filters.make = formData.Make;
+                if (formData.Model) filters.model = formData.Model;
+                if (formData.City) filters.city = formData.City;
+            } else if (category === 'buy') {
+                apiCategory = 'house_buy';
+                if (formData.City) filters.city = formData.City;
+                if (formData.Location) filters.location = formData.Location;
+            } else if (category === 'rent') {
+                apiCategory = 'house_rent';
+                if (formData.City) filters.city = formData.City;
+                if (formData.Location) filters.location = formData.Location;
             }
-
-            // Filter out results that exceed budget significantly (allow small buffer)
-            setBudgetResult(results.filter(r => r.price <= budget * 1.1));
+            const results = await getRecommendations(apiCategory, budget, filters);
+            if (!results || results.length === 0) {
+                setError(`No recommendations found near PKR ${budget.toLocaleString()} for this configuration. Try adjusting your budget or filters.`);
+                setBudgetResult([]);
+            } else {
+                setBudgetResult(results);
+            }
+        } catch (error) {
+            console.error(error);
+            setError("Failed to fetch budget recommendations. Please try again.");
+            setBudgetResult([]);
+        } finally {
             setLoading(false);
-        }, 800);
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
+        }
     };
-
     useEffect(() => {
         const serviceType = category === 'buy' ? 'house_buy' : category === 'rent' ? 'house_rent' : category;
-        fetch(`http://localhost:8000/api/options/${serviceType}`)
+        fetch(`http:
             .then(res => res.json())
             .then(data => {
                 setOptions({ raw_current: data });
             })
             .catch(err => console.error("Failed to fetch options directly:", err));
     }, [category]);
-
     useEffect(() => {
         if (category === 'car') {
             setFormData({ Year: currentYear, Mileage: '', FuelType: 'Petrol', Transmission: 'Automatic', Color: 'White', Assembly: 'Local' });
         } else if (category === 'bike') {
             setFormData({ Year: currentYear, Mileage: '' });
         } else {
-            setFormData({ Year: currentYear, Type: 'House', Area: 5, AreaUnit: 'Marla', Bedrooms: 3, Baths: 3 });
+            setFormData({ Year: currentYear, Type: '', Area: 5, AreaUnit: 'Marla', Bedrooms: 3, Baths: 3 });
         }
         setResult(null);
         setBudgetResult([]);
         setError(null);
-        setMode('predict');
     }, [category, currentYear]);
-
+    useEffect(() => {
+        if (error) {
+            const timer = setTimeout(() => {
+                setError(null);
+            }, 3500);
+            return () => clearTimeout(timer);
+        }
+    }, [error]);
     const handleChange = (field: string, value: any) => {
         setFormData((prev: any) => ({ ...prev, [field]: value }));
         setError(null);
         if (field === 'Make') setFormData((prev: any) => ({ ...prev, Model: '' }));
         if (field === 'City') setFormData((prev: any) => ({ ...prev, Location: '' }));
     };
-
     useEffect(() => {
         if (category === 'bike' && formData.Model) {
             const name = formData.Model.toLowerCase();
@@ -234,13 +195,11 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             }
         }
     }, [formData.Model, category]);
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
         setResult(null);
-
         let required: string[] = [];
         if (category === 'car') {
             required = ['Make', 'Model', 'Year', 'RegisteredIn', 'Mileage', 'EngineCapacity', 'Transmission', 'Assembly'];
@@ -252,22 +211,23 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                 required.push('Bedrooms', 'Baths');
             }
         }
-
         const missing = required.filter(f => !formData[f]);
         if (missing.length > 0) {
             const friendlyNames: { [key: string]: string } = {
                 'RegisteredIn': 'Registered In',
                 'EngineCapacity': 'Engine Capacity',
-                'AreaUnit': 'Area Unit',
+                'AreaUnit': 'Area & Unit',
+                'Type': 'Type',
                 'City': category === 'bike' ? 'Registered' : 'City'
             };
             const missingLabels = missing.map(f => friendlyNames[f] || f);
             setError(`Please fill required fields: ${missingLabels.join(', ')}`);
             setLoading(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
             return;
         }
-
         try {
             let serviceType: string = category;
             let payloadData: any = {};
@@ -323,8 +283,6 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                 throw new Error(err.detail || "Prediction failed");
             }
             const data = await response.json();
-
-            // Calculate Rental Yield for Property Buy
             if (category === 'buy') {
                 try {
                     const rentPayload = { ...payloadData };
@@ -347,10 +305,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                     }
                 } catch (rentErr) { console.error("Failed to fetch rent yield", rentErr); }
             }
-
             setResult(data);
-
-            // Add to History
             const newHistoryItem = {
                 id: Date.now(),
                 category,
@@ -369,15 +324,13 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             setLoading(false);
         }
     };
-
     const generatePDF = async () => {
         const element = document.getElementById('predicta-main-container');
         if (!element) return;
-
         try {
             const { toPng } = await import('html-to-image');
             const dataUrl = await toPng(element, {
-                backgroundColor: '#e2f0e6', // Ensure background is captured as light green
+                backgroundColor: '#e2f0e6', 
                 cacheBust: true,
                 style: {
                     height: 'auto',
@@ -386,25 +339,20 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                     padding: '20px',
                 }
             });
-
             const pdf = new jsPDF({
                 orientation: 'portrait',
                 unit: 'mm',
                 format: 'a4'
             });
-
             const imgProps = pdf.getImageProperties(dataUrl);
             const pdfWidth = pdf.internal.pageSize.getWidth();
             const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
             if (pdfHeight > pdf.internal.pageSize.getHeight()) {
                 const pageHeight = pdf.internal.pageSize.getHeight();
                 let heightLeft = pdfHeight;
                 let position = 0;
-
                 pdf.addImage(dataUrl, 'PNG', 0, position, pdfWidth, pdfHeight);
                 heightLeft -= pageHeight;
-
                 while (heightLeft >= 0) {
                     position = heightLeft - pdfHeight;
                     pdf.addPage();
@@ -414,54 +362,44 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
             } else {
                 pdf.addImage(dataUrl, 'PNG', 0, 10, pdfWidth, pdfHeight);
             }
-
             pdf.save(`PredictaPK_Full_Report_${new Date().toISOString().split('T')[0]}.pdf`);
         } catch (err: any) {
             console.error("PDF generation failed", err);
             setError("Failed to generate PDF. Please try again. " + (err.message || ""));
         }
     };
-
     return (
         <div className="mt-8 w-full max-w-4xl mx-auto">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-10">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-10" noValidate>
                 <Card className="overflow-hidden border-2 border-[#044e22] bg-[#badcc4] shadow-xl shadow-[#044e22]/5 rounded-3xl">
                     <CardContent className="p-0">
-                        <div className="flex items-center gap-4 mb-8 pl-6 pt-6">
-                            <div className="bg-[#e2f0e6] p-3 rounded-2xl text-[#044e22] ring-2 ring-[#044e22] shadow-sm shadow-[#044e22]/20">
-                                {category === 'car' && <Car className="w-6 h-6" />}
-                                {category === 'bike' && <Bike className="w-6 h-6" />}
-                                {category === 'buy' && <Home className="w-6 h-6" />}
-                                {category === 'rent' && <Building className="w-6 h-6" />}
+                        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-2 md:mb-8 p-4 pb-4 md:p-8 bg-white/5 border-b border-[#044e22]/10">
+                            <div className="flex items-center gap-4 w-full md:w-auto px-2 md:px-0">
+                                <div className="bg-[#e2f0e6] p-3 rounded-2xl text-[#044e22] ring-2 ring-[#044e22] shadow-sm shadow-[#044e22]/20 flex-shrink-0">
+                                    {category === 'car' && <Car className="w-6 h-6" />}
+                                    {category === 'bike' && <Bike className="w-6 h-6" />}
+                                    {category === 'buy' && <Home className="w-6 h-6" />}
+                                    {category === 'rent' && <Building className="w-6 h-6" />}
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-xl md:text-2xl font-black text-[#044e22] tracking-tight drop-shadow-sm">
+                                        {category === 'car' ? 'Vehicle Configuration' : category === 'bike' ? 'Bike Specifications' : 'Property Parameters'}
+                                    </h3>
+                                    <p className="text-[#044e22]/80 text-xs md:text-sm font-medium">Configure the details below for an instant AI valuation.</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="text-2xl font-black text-[#044e22] tracking-tight drop-shadow-sm">
-                                    {category === 'car' ? 'Vehicle Configuration' : category === 'bike' ? 'Bike Specifications' : 'Property Parameters'}
-                                </h3>
-                                <p className="text-[#044e22]/80 text-sm font-medium">Configure the details below for an instant AI valuation.</p>
-                            </div>
-                            <div className="flex gap-2 ml-auto mr-6">
-                                <Button
-                                    type="button"
-                                    onClick={() => { setMode(prev => prev === 'predict' ? 'budget' : 'predict'); setBudgetResult([]); setResult(null); setSelectedRecommendation(null); }}
-                                    className="bg-[#e2f0e6] text-[#044e22] hover:bg-[#d0e5d6] border border-[#044e22]/20 font-bold rounded-xl shadow-sm flex items-center gap-2"
-                                >
-                                    {mode === 'predict' ? <DollarSign className="w-4 h-4" /> : <Sparkles className="w-4 h-4" />}
-                                    {mode === 'predict' ? 'Budget Search' : 'AI Prediction'}
-                                </Button>
-
+                            <div className="flex flex-wrap gap-2 md:ml-auto w-full px-2 md:px-0 md:w-auto">
                                 {comparisons.length > 0 && (
                                     <Button
                                         type="button"
                                         onClick={() => setIsComparisonOpen(true)}
-                                        className="bg-[#e2f0e6] text-[#044e22] hover:bg-[#d0e5d6] border border-[#044e22]/20 font-bold rounded-xl shadow-sm"
+                                        className="flex-1 md:flex-none bg-[#044e22] text-[#adc74d] hover:bg-[#adc74d] hover:text-[#044e22] border border-[#adc74d] font-bold rounded-xl shadow-sm flex items-center justify-center gap-2 text-xs md:text-sm py-6 px-2"
                                     >
                                         Compare ({comparisons.length})
                                     </Button>
                                 )}
                             </div>
                         </div>
-
                         <div id="prediction-result-card" className="p-8 md:p-10 m-6 rounded-3xl bg-[#044e22] backdrop-blur-sm border border-[#044e22]/20 shadow-xl">
                             {mode === 'budget' && (
                                 <div className="mb-8 space-y-2">
@@ -479,14 +417,12 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                                     <p className="text-[#e2f0e6]/60 text-xs ml-1">Enter your maximum budget to find best matches.</p>
                                 </div>
                             )}
-
-                            {/* Show inputs in both modes, but with slightly different styling/context if needed */}
+                            {}
                             <div className={mode === 'budget' ? 'opacity-90' : ''}>
                                 {category === 'car' && <CarInputs key={`car-${mode}`} formData={formData} handleChange={handleChange} options={options} minimal={mode === 'budget'} />}
                                 {category === 'bike' && <BikeInputs key={`bike-${mode}`} formData={formData} handleChange={handleChange} options={options} minimal={mode === 'budget'} />}
                                 {(category === 'buy' || category === 'rent') && <PropertyInputs key={`property-${mode}`} formData={formData} handleChange={handleChange} options={options} minimal={mode === 'budget'} />}
                             </div>
-
                             {mode === 'budget' && budgetResult.length > 0 && (
                                 <div className="space-y-4 mt-8 pt-8 border-t border-white/10">
                                     <h4 className="font-bold text-[#e2f0e6] text-lg">Recommendations for you:</h4>
@@ -510,8 +446,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                         </div>
                     </CardContent>
                 </Card>
-
-                {/* Recommendation Details Modal */}
+                {}
                 <RecommendationModal
                     recommendation={selectedRecommendation}
                     onClose={() => setSelectedRecommendation(null)}
@@ -544,9 +479,6 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
                     </Button>
                 </motion.div>
             </form>
-
-
-
             <AnimatePresence>
                 {result && (
                     <PredictionResult
@@ -566,5 +498,4 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category }) => {
         </div >
     );
 };
-
 export default PredictionForm;

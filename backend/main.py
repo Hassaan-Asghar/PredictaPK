@@ -25,6 +25,7 @@ app.add_middleware(
 models = {}
 features_options = {}
 explainers: Dict[str, Any] = {}
+datasets: Dict[str, pd.DataFrame] = {}
 @app.on_event("startup")
 def load_artifacts():
     print(f"Loading models from: {MODELS_DIR}")
@@ -41,6 +42,24 @@ def load_artifacts():
             with open(json_path, 'r') as f:
                 features_options[name] = json.load(f)
             print(f" -> Loaded {name} options")
+    print("Loading datasets for recommendations...")
+    dataset_files = {
+        "car": "cars dataset.csv",
+        "bike": "bikes dataset.csv",
+        "house_buy": "house buy dataset.csv",
+        "house_rent": "house rent dataset.csv"
+    }
+    dataset_dir = os.path.join(PROJECT_ROOT, 'dataset')
+    for svc, filename in dataset_files.items():
+        file_path = os.path.join(dataset_dir, filename)
+        if os.path.exists(file_path):
+            try:
+                datasets[svc] = pd.read_csv(file_path)
+                print(f" -> Loaded {filename} ({len(datasets[svc])} rows)")
+            except Exception as e:
+                print(f" -> Failed to load {filename}: {e}")
+        else:
+            print(f" -> WARNING: Dataset {filename} not found")
     def warmup_explainers():
         print("Starting background SHAP explainer warmup...")
         for name, model in models.items():
@@ -63,55 +82,37 @@ def get_price_trends(model, base_df, service_name):
     """
     try:
         trends = []
-        
-        # synthetic trends for real estate (since dataset has no year)
         if service_name in ['house_buy', 'house_rent']:
-            current_year = 2024 # Default base if year not present
+            current_year = 2024 
             if 'year' in base_df.columns:
                 current_year = int(base_df['year'].iloc[0])
-            
-            # Annual growth rates (approximate for Pakistan market)
             rate = 0.10 if service_name == 'house_buy' else 0.07 
-            
             print(f"Generating synthetic trends for {service_name} with rate {rate}")
-            
             base_pred = model.predict(base_df)[0]
             year_range = range(current_year - 4, current_year + 2)
-            
             for y in year_range:
-                # Formula: Price * (1 + rate)^(year - current_year)
-                # If year is in past, exponent is negative, price is lower.
-                # If year is future, exponent is positive, price is higher.
                 factor = (1 + rate) ** (y - current_year)
                 adjusted_price = base_pred * factor
                 trends.append({"year": y, "price": round(adjusted_price, 2)})
-            
             return trends
-
-        # Standard ML-based trends for Cars/Bikes (where year IS a feature)
         if 'year' not in base_df.columns:
             return []
-        
         current_year = int(base_df['year'].iloc[0])
         print(f"Calculating trends for {service_name}, base year: {current_year}")
         year_range = range(current_year - 4, current_year + 2)
-        
         for y in year_range:
             temp_df = base_df.copy()
             temp_df['year'] = y
-            # Clean data again just in case (though it's already clean)
             try:
                 pred = model.predict(temp_df)[0]
                 trends.append({"year": y, "price": round(pred, 2)})
             except Exception as e_inner:
                 print(f"Trend prediction failed for year {y}: {e_inner}")
                 continue
-                
         return trends
     except Exception as e:
         print(f"Trend calculation failed: {e}")
         return []
-
 def get_shap_explanation(model_pipeline, input_df, service_name=None):
     """
     Calculates SHAP values safely with caching and sparse matrix support.
@@ -199,6 +200,73 @@ def predict(input_data: PredictionInput):
     except Exception as e:
         print(f"Prediction Error: {e}")
         raise HTTPException(status_code=400, detail=f"Prediction failed: {str(e)}")
+class RecommendationInput(BaseModel):
+    service_type: str
+    budget: float
+    filters: Optional[Dict[str, Any]] = None
+@app.post("/api/recommend")
+def recommend(input_data: RecommendationInput):
+    service = input_data.service_type
+    if service not in datasets:
+        raise HTTPException(status_code=404, detail="Dataset not available for this service")
+    df = datasets[service].copy()
+    budget = input_data.budget
+    filters = input_data.filters or {}
+    margin = budget * 0.15
+    min_price = budget - margin
+    max_price = budget + margin
+    df = df[(df['price'] >= min_price) & (df['price'] <= max_price)]
+    for key, val in filters.items():
+        if val is None or pd.isna(val) or str(val).strip() == "":
+            continue
+        key = key.lower()
+        if key in df.columns:
+            print(f"Applying filter: {key} = {val} (Before: {len(df)} rows)")
+            if df[key].dtype == 'object':
+                df = df[df[key].astype(str).str.lower() == str(val).lower()]
+                print(f"  -> After object filter: {len(df)} rows")
+            elif pd.api.types.is_numeric_dtype(df[key]) and isinstance(val, (int, float)):
+                df = df[df[key] >= val]
+                print(f"  -> After numeric filter: {len(df)} rows")
+    if df.empty:
+        print("DF is empty after custom filters! Ignoring custom filters and relying purely on budget to yield SOMETHING")
+        df = datasets[service].copy()
+        df = df[(df['price'] >= min_price) & (df['price'] <= max_price)]
+        if df.empty: return []
+    df['diff'] = abs(df['price'] - budget)
+    df = df.sort_values(by='diff').head(5)
+    results = []
+    for _, row in df.iterrows():
+        if service == 'car':
+            name = f"{row.get('make', '')} {row.get('model', '')}".strip()
+            specs = {
+                'Engine': f"{row.get('engine_capacity', '')} cc",
+                'Transmission': row.get('transmission', ''),
+                'Mileage': f"{row.get('mileage', '')} km",
+                'Assembly': row.get('assembly', '')
+            }
+        elif service == 'bike':
+            name = f"{row.get('make', '')} {row.get('model', '')}".strip()
+            specs = {
+                'Engine': f"{row.get('engine_capacity', '')} cc",
+                'Mileage': f"{row.get('mileage', '')} km"
+            }
+        else: 
+            name = f"{row.get('type', 'Property').title()} in {row.get('location', '')}".strip()
+            specs = {
+                'Area': f"{row.get('area', '')} sq ft",
+                'Bedrooms': row.get('bedrooms', ''),
+                'Baths': row.get('baths', '')
+            }
+        result = {
+            "name": name,
+            "price": float(row['price']),
+            "year": int(row['year']) if 'year' in row and not pd.isna(row['year']) else None,
+            "location": row.get('city', ''),
+            "specs": {k: v for k, v in specs.items() if v and str(v).strip() not in ['', 'nan', 'nan cc', 'nan km', 'nan sq ft']}
+        }
+        results.append(result)
+    return results
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

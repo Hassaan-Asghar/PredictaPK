@@ -2,7 +2,13 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import PredictionForm from "@/components/PredictionForm"
 import { Car, Bike, Home, Building } from "lucide-react"
-export default function DashboardTabs() {
+interface DashboardTabsProps {
+    history: any[];
+    setHistory: React.Dispatch<React.SetStateAction<any[]>>;
+    viewMode?: 'predict' | 'budget';
+}
+
+export default function DashboardTabs({ history, setHistory, viewMode }: DashboardTabsProps) {
     return (
         <Tabs defaultValue="auto" className="space-y-8 w-full">
             <div className="flex justify-center">
@@ -23,9 +29,6 @@ export default function DashboardTabs() {
             </div>
             <TabsContent value="auto" className="animate-in fade-in zoom-in-95 duration-500 ease-out">
                 <Tabs defaultValue="car" className="w-full">
-                    {}
-                    {}
-                    {}
                     <div className="flex justify-center mb-4">
                         <TabsList className="w-[360px] bg-[#badcc4]/60 backdrop-blur-sm border border-[#044e22] p-1 h-auto rounded-xl shadow-md">
                             <TabsTrigger value="car" className="rounded-lg data-[state=active]:!bg-[#044e22] data-[state=active]:!text-white data-[state=active]:shadow-md text-[#044e22] font-semibold hover:text-[#044e22] hover:bg-[#044e22]/10 transition-colors">
@@ -36,8 +39,8 @@ export default function DashboardTabs() {
                             </TabsTrigger>
                         </TabsList>
                     </div>
-                    <TabsContent value="car"><PredictionForm category="car" /></TabsContent>
-                    <TabsContent value="bike"><PredictionForm category="bike" /></TabsContent>
+                    <TabsContent value="car"><PredictionForm category="car" history={history} setHistory={setHistory} viewMode={viewMode} /></TabsContent>
+                    <TabsContent value="bike"><PredictionForm category="bike" history={history} setHistory={setHistory} viewMode={viewMode} /></TabsContent>
                 </Tabs>
             </TabsContent>
             <TabsContent value="realestate" className="animate-in fade-in zoom-in-95 duration-500 ease-out">
@@ -52,8 +55,8 @@ export default function DashboardTabs() {
                             </TabsTrigger>
                         </TabsList>
                     </div>
-                    <TabsContent value="buy"><PredictionForm category="buy" /></TabsContent>
-                    <TabsContent value="rent"><PredictionForm category="rent" /></TabsContent>
+                    <TabsContent value="buy"><PredictionForm category="buy" history={history} setHistory={setHistory} viewMode={viewMode} /></TabsContent>
+                    <TabsContent value="rent"><PredictionForm category="rent" history={history} setHistory={setHistory} viewMode={viewMode} /></TabsContent>
                 </Tabs>
             </TabsContent>
         </Tabs>

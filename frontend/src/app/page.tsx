@@ -5,14 +5,14 @@ import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import Dashboard from "@/components/PredictionForm/Dashboard"
-
+import Navbar from "@/components/Navbar"
 const DashboardTabs = dynamic(() => import('@/components/DashboardTabs'), {
   ssr: false,
 })
 const ParticleField = () => {
   const [particles, setParticles] = useState<Array<{ left: string; top: string; animationDuration: string; animationDelay: string }>>([])
   useEffect(() => {
-    const newParticles = [...Array(20)].map(() => ({
+    const newParticles = [...Array(40)].map(() => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       animationDuration: `${5 + Math.random() * 10}s`,
@@ -25,7 +25,7 @@ const ParticleField = () => {
       {particles.map((p, i) => (
         <div
           key={i}
-          className="absolute w-1.5 h-1.5 bg-emerald-400/40 rounded-full shadow-lg shadow-emerald-400/50"
+          className="absolute w-1.5 h-1.5 bg-[#044e22] rounded-full shadow-lg shadow-[#044e22]/50"
           style={{
             left: p.left,
             top: p.top,
@@ -37,21 +37,23 @@ const ParticleField = () => {
     </div>
   )
 }
-
-
 export default function Page() {
-  const [view, setView] = useState<'landing' | 'prediction'>('landing')
+  const [view, setView] = useState<'landing' | 'prediction' | 'budget'>('landing')
   const [history, setHistory] = useState<any[]>([])
-
   useEffect(() => {
     const savedHistory = localStorage.getItem('predicta_history')
     if (savedHistory) {
       try { setHistory(JSON.parse(savedHistory)) } catch (e) { console.error(e) }
     }
-  }, [view]) // Reload history when view changes (e.g. coming back from prediction)
-
+  }, []) 
+  useEffect(() => {
+    if (history.length > 0) {
+      localStorage.setItem('predicta_history', JSON.stringify(history));
+    }
+  }, [history]);
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-white to-gray-50 overflow-hidden flex flex-col items-center justify-center selection:bg-emerald-500/20 selection:text-emerald-900">
+      <Navbar view={view} setView={setView} />
       { }
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         { }
@@ -88,18 +90,18 @@ export default function Page() {
         <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-radial from-emerald-200/30 to-transparent blur-3xl" />
         <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-radial from-green-200/30 to-transparent blur-3xl" />
       </div>
-      <div id="predicta-main-container" className="relative z-10 w-full max-w-5xl px-4 py-8 md:py-12">
+      <div id="predicta-main-container" className="relative z-10 w-full max-w-5xl px-4 pt-24 pb-8 md:pt-32 md:pb-12">
         { }
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-12 text-center space-y-5"
+          className="mb-6 text-center space-y-5"
         >
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-[#044e22] shadow-lg shadow-emerald-500/10 mb-4 group ring-1 ring-[#4ea96b]/50 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#044e22] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#044e22]"></span>
             </span>
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#044e22] group-hover:text-[#044e22] transition-colors">Next-Gen AI Valuation</span>
           </div>
@@ -114,32 +116,27 @@ export default function Page() {
             Get instant accurate valuations, track market trends, and make informed decisions with our advanced prediction engine.
           </p>
         </motion.header>
-
         {view === 'landing' ? (
           <Dashboard
             recentSearches={history}
             onStartPrediction={() => setView('prediction')}
+            onDeleteSearch={(idx) => {
+              const newHistory = [...history];
+              newHistory.splice(idx, 1);
+              setHistory(newHistory);
+              localStorage.setItem('predicta_history', JSON.stringify(newHistory));
+            }}
           />
         ) : (
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="-mt-4"
+            className="-mt-4 w-full flex flex-col items-center"
           >
-            <div className="absolute top-4 left-4 z-50">
-              <Button
-                variant="ghost"
-                onClick={() => setView('landing')}
-                className="text-[#044e22] hover:bg-[#e2f0e6] font-bold bg-white/40 backdrop-blur-sm border border-[#044e22]/10 shadow-sm"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" /> Back to Dashboard
-              </Button>
-            </div>
-            <DashboardTabs />
+            <DashboardTabs history={history} setHistory={setHistory} viewMode={view === 'budget' ? 'budget' : 'predict'} />
           </motion.div>
         )}
-
         <footer className="mt-20 text-center border-t border-emerald-100 pt-8">
           <p className="text-gray-500 text-sm font-medium hover:text-[#044e22] transition-colors cursor-pointer">
             © {new Date().getFullYear()} Predicta PK. Precision Intelligence.

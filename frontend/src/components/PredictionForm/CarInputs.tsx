@@ -4,31 +4,28 @@ import { Combobox } from "@/components/ui/combobox";
 import { NumberInput } from "@/components/ui/number-input";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants, inputClasses, selectTriggerClasses, selectContentClasses, renderInputLabel, toOptions } from "./constants";
-
 interface CarInputsProps {
     formData: any;
     handleChange: (field: string, value: any) => void;
     options: any;
     minimal?: boolean;
 }
-
 const CarInputs: React.FC<CarInputsProps> = ({ formData, handleChange, options, minimal = false }) => {
     const raw = options.raw_current || {};
     const makes = raw.make_model_tree ? Object.keys(raw.make_model_tree) : [];
     const models = formData.Make ? (raw.make_model_tree?.[formData.Make] || []) : [];
     const cities = raw.city || [];
     const engineOptions = raw.engine_capacity || [];
-
     return (
         <motion.div variants={containerVariants} initial="hidden" animate="show" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
                 { label: "Make", field: "Make", type: "combo", opts: makes, req: true },
-                { label: "Model", field: "Model", type: "combo", opts: models, req: true, disabled: !formData.Make, hidden: false }, // Always show Model
+                { label: "Model", field: "Model", type: "combo", opts: models, req: true, disabled: !formData.Make, hidden: false }, 
                 { label: "Year", field: "Year", type: "number", req: true, hidden: minimal },
                 { label: "Mileage (km)", field: "Mileage", type: "number", req: true, hidden: minimal },
                 { label: "City", field: "City", type: "combo", opts: cities, req: false, hidden: minimal },
                 { label: "Registered In", field: "RegisteredIn", type: "combo", opts: raw.registered || cities, req: true },
-                { label: "Transmission", field: "Transmission", type: "select", opts: raw.transmission || ['Manual', 'Automatic'], req: true, hidden: !minimal }, // Conditionally render Transmission in main grid
+                { label: "Transmission", field: "Transmission", type: "select", opts: raw.transmission || ['Manual', 'Automatic'], req: true, hidden: !minimal }, 
                 { label: "Color", field: "Color", type: "combo", opts: raw.color || [], req: false, hidden: minimal },
                 { label: "Engine (cc)", field: "EngineCapacity", type: "combo", opts: engineOptions.map((c: string) => `${c} cc`), req: true, hidden: minimal }
             ].filter(i => !i.hidden).map((input) => (
@@ -43,7 +40,7 @@ const CarInputs: React.FC<CarInputsProps> = ({ formData, handleChange, options, 
                                 placeholder={`Select ${input.label} `}
                                 disabled={input.disabled}
                             />
-                        ) : input.type === 'select' ? ( // New condition for select type
+                        ) : input.type === 'select' ? ( 
                             <Select onValueChange={v => handleChange(input.field, v)} value={formData[input.field]}>
                                 <SelectTrigger className={selectTriggerClasses}><SelectValue placeholder="Select" /></SelectTrigger>
                                 <SelectContent className={selectContentClasses}>
@@ -63,7 +60,7 @@ const CarInputs: React.FC<CarInputsProps> = ({ formData, handleChange, options, 
                     </div>
                 </motion.div>
             ))}
-            {!minimal && ( // Wrap the entire bottom section with !minimal condition
+            {!minimal && ( 
                 <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
                     <div className="space-y-1">
                         {renderInputLabel("Transmission", true)}
@@ -105,5 +102,4 @@ const CarInputs: React.FC<CarInputsProps> = ({ formData, handleChange, options, 
         </motion.div>
     );
 };
-
 export default CarInputs;

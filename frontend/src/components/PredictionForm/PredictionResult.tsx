@@ -4,21 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Activity, TrendingUp, Sparkles, Download } from "lucide-react";
 import { motion } from "framer-motion";
-// Fix paths - assuming relative to this file inside components/PredictionForm/
 import ShapChart from '../ShapChart';
 import TrendChart from '../TrendChart';
-
 interface PredictionResultProps {
     result: any;
     category: string;
     addToComparison: () => void;
     generatePDF: () => void;
 }
-
 const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, addToComparison, generatePDF }) => {
     const explanationData = result?.explanation || [];
     const filteredExplanation = explanationData.filter((i: any) => i.active);
-
     const formatPakistaniPrice = (amount: number): string => {
         const absAmount = Math.abs(amount);
         if (absAmount >= 10000000) return `${(amount / 10000000).toFixed(2)} Crore`;
@@ -26,7 +22,6 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
         if (absAmount >= 1000) return `${(amount / 1000).toFixed(1)} Thousand`;
         return amount.toLocaleString();
     };
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -66,26 +61,26 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
                                 type="button"
                                 onClick={addToComparison}
                                 variant="outline"
-                                className="flex-1 bg-[#e2f0e6]/10 text-[#e2f0e6] border-[#e2f0e6]/30 hover:bg-[#e2f0e6]/20 hover:text-white rounded-xl h-12 font-bold transition-all"
+                                className="flex-1 bg-[#e2f0e6]/10 text-[#e2f0e6] border-[#e2f0e6]/30 hover:!bg-[#adc74d] hover:text-[#044e22] rounded-xl h-12 font-bold transition-all"
                             >
-                                + Compare
+                                + Add to Compare
                             </Button>
                             <Button
                                 type="button"
                                 onClick={generatePDF}
                                 variant="outline"
-                                className="flex-1 bg-[#e2f0e6]/10 text-[#e2f0e6] border-[#e2f0e6]/30 hover:bg-[#e2f0e6]/20 hover:text-white rounded-xl h-12 font-bold transition-all"
+                                className="flex-1 bg-[#e2f0e6]/10 text-[#e2f0e6] border-[#e2f0e6]/30 hover:!bg-[#adc74d] hover:text-[#044e22] rounded-xl h-12 font-bold transition-all"
                             >
-                                <Download className="w-4 h-4 mr-2" /> Download
+                                <Download className="w-4 h-4 mr-2" /> Download Report
                             </Button>
                             <Button
                                 type="button"
                                 onClick={() => {
                                     const text = `Check out this ${category} prediction on PredictaPK! Estimated Price: ${formatPakistaniPrice(result?.prediction ?? 0)}`;
-                                    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+                                    window.open(`https:
                                 }}
                                 variant="outline"
-                                className="flex-1 bg-transparent text-[#25D366] border-[#25D366] hover:bg-[#25D366] hover:text-white rounded-xl h-12 font-bold transition-all"
+                                className="flex-1 bg-transparent text-[#e2f0e6] border-[#25D366] hover:!bg-[#adc74d] hover:text-[#044e22] rounded-xl h-12 font-bold transition-all"
                             >
                                 <WhatsAppIcon className="w-4 h-4 mr-2" /> WhatsApp
                             </Button>
@@ -95,7 +90,7 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
             </div>
             {filteredExplanation.length > 0 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-12">
-                    {/* Trend Chart (For all categories if data exists) */}
+                    {}
                     {result?.trends && result.trends.length > 0 && (
                         <Card className="overflow-hidden border-2 border-[#044e22] bg-[#badcc4] shadow-xl shadow-[#044e22]/5 rounded-3xl mb-12">
                             <CardContent className="p-0">
@@ -116,7 +111,6 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
                             </CardContent>
                         </Card>
                     )}
-
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-12">
                         <Card className="overflow-hidden border-2 border-[#044e22] bg-[#badcc4] shadow-xl shadow-[#044e22]/5 rounded-3xl">
                             <CardContent className="p-0">
@@ -133,7 +127,6 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
                                 </div>
                                 <div className="p-8 md:p-10 m-6 rounded-3xl bg-[#044e22] backdrop-blur-sm border border-[#044e22]/20 shadow-xl">
                                     <ShapChart data={filteredExplanation} />
-
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 border-t border-[#f2efc9]/30 pt-8">
                                         {filteredExplanation.map((item: any, idx: number) => (
                                             <div key={idx} className="bg-[#22401A] border border-[#f2efc9] p-4 rounded-xl flex justify-between items-center shadow-lg shadow-[#000000]/20 hover:scale-[1.02] transition-transform duration-300">
@@ -156,5 +149,4 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
         </motion.div>
     );
 };
-
 export default PredictionResult;
