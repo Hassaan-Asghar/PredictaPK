@@ -182,7 +182,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
     };
     useEffect(() => {
         const serviceType = category === 'buy' ? 'house_buy' : category === 'rent' ? 'house_rent' : category;
-        fetch(`http://localhost:8000/api/options/${serviceType}`)
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/options/${serviceType}`)
             .then(res => res.json())
             .then(data => {
                 setOptions({ raw_current: data });
@@ -303,7 +303,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
                     year: Number(formData.Year)
                 };
             }
-            const response = await fetch("http://localhost:8000/api/predict", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/predict`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -319,7 +319,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
             if (category === 'buy') {
                 try {
                     const rentPayload = { ...payloadData };
-                    const rentResponse = await fetch("http://localhost:8000/api/predict", {
+                    const rentResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/predict`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
