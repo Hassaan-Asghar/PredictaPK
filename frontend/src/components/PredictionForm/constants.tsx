@@ -1,6 +1,7 @@
 import { Label } from "@/components/ui/label";
+import { Variants } from "framer-motion";
 
-export const containerVariants = {
+export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
@@ -8,9 +9,9 @@ export const containerVariants = {
     }
 };
 
-export const itemVariants = {
+export const itemVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
 };
 
 export const inputClasses = "!bg-[#e2f0e6] !opacity-100 border-2 border-[#044e22] text-[#044e22] placeholder:text-[#4ea96b]/60 focus:bg-[#e2f0e6] focus:border-[#044e22] focus:ring-2 focus:ring-[#044e22]/20 rounded-xl h-12 shadow-sm transition-all";

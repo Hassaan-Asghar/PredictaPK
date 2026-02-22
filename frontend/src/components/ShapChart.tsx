@@ -53,7 +53,7 @@ const ShapChart: React.FC<ShapChartProps> = ({ data }) => {
                         <Tooltip
                             contentStyle={{ backgroundColor: '#22401A', borderColor: '#f2efc9', color: '#f2efc9', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.5)' }}
                             cursor={{ fill: '#f2efc9', opacity: 0.1 }}
-                            formatter={(value: number) => [`PKR ${Math.abs(value).toLocaleString()}`, "Impact"]}
+                            formatter={(value: any) => [`PKR ${Math.abs(value).toLocaleString()}`, "Impact"] as [any, string]}
                             labelStyle={{ color: '#C1D96C' }}
                             itemStyle={{ color: '#f2efc9' }}
                         />

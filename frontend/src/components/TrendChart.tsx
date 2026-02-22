@@ -56,7 +56,7 @@ const TrendChart: React.FC<TrendProps> = ({ data }) => {
                         itemStyle={{ color: '#f2efc9' }}
                         cursor={{ fill: '#f2efc9', opacity: 0.1 }}
                         labelStyle={{ color: '#C1D96C' }}
-                        formatter={(value: number) => [`PKR ${value.toLocaleString()}`, "Est. Price"]}
+                        formatter={(value: any) => [`PKR ${value.toLocaleString()}`, "Est. Price"] as [any, string]}
                     />
                     <Area
                         type="monotone"

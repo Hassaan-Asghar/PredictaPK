@@ -109,7 +109,7 @@ export default function Page() {
             PredictaPK
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-[#044e22] tracking-wide mb-4">
-            Real-Time Market Valuator
+            Real Time Market Valuator
           </h2>
           <p className="text-[#044e22] text-sm md:text-base max-w-2xl mx-auto font-medium leading-relaxed opacity-90">
             Unlocking market intelligence for <span className="font-bold underline decoration-[#4ea96b] decoration-2 underline-offset-4">Vehicles</span> & <span className="font-bold underline decoration-[#4ea96b] decoration-2 underline-offset-4">Real Estate</span> with precision AI.
