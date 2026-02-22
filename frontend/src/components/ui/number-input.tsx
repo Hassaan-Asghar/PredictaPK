@@ -5,20 +5,21 @@ import { cn } from "@/lib/utils"
 export interface NumberInputProps
     extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
     onChange?: (value: string | number) => void
+    stepAmount?: number
 }
 const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
-    ({ className, onChange, value, ...props }, ref) => {
+    ({ className, onChange, value, stepAmount = 1, ...props }, ref) => {
         const inputRef = React.useRef<HTMLInputElement>(null)
         const handleIncrement = (e: React.MouseEvent) => {
             e.preventDefault()
             const current = Number(value || 0)
-            const next = current + 1
+            const next = current + stepAmount
             if (onChange) onChange(next)
         }
         const handleDecrement = (e: React.MouseEvent) => {
             e.preventDefault()
             const current = Number(value || 0)
-            const next = current > 0 ? current - 1 : 0
+            const next = current >= stepAmount ? current - stepAmount : 0
             if (onChange) onChange(next)
         }
         return (
@@ -39,7 +40,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
                     >
                         <ChevronUp className="h-3 w-3" />
                     </button>
-                    {}
+                    { }
                     <div className="h-[1px] bg-[#044e22]" />
                     <button
                         type="button"

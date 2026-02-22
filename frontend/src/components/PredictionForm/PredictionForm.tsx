@@ -14,6 +14,8 @@ import PredictionResult from './PredictionResult';
 import MarketTrends from '../MarketTrends';
 import RecommendationModal from './RecommendationModal';
 import { getRecommendations } from '@/lib/api';
+import { NumberInput } from "@/components/ui/number-input";
+import { inputClasses } from './constants';
 interface PredictionFormProps {
     category: 'car' | 'bike' | 'buy' | 'rent';
     history: any[];
@@ -69,8 +71,8 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
         setError(null);
         let required: string[] = ['MaxBudget'];
         if (category === 'car') required.push('Make', 'Model', 'RegisteredIn', 'Transmission');
-        else if (category === 'bike') required.push('Make', 'Model', 'City'); 
-        else if (category === 'rent' || category === 'buy') required.push('City', 'Location', 'Type', 'Area', 'AreaUnit');
+        else if (category === 'bike') required.push('Make', 'Model', 'City');
+        else if (category === 'rent' || category === 'buy') required.push('City', 'Location', 'Area', 'AreaUnit');
         const missing = required.filter(f => !formData[f]);
         if (missing.length > 0) {
             const friendlyNames: any = {
@@ -111,11 +113,12 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
         }
         try {
             const filters: any = {};
-            let apiCategory = category;
+            let apiCategory: string = category;
             if (category === 'car') {
                 if (formData.Make) filters.make = formData.Make;
                 if (formData.Model) filters.model = formData.Model;
-                if (formData.City) filters.city = formData.City;
+                if (formData.City || formData.RegisteredIn) filters.city = formData.City || formData.RegisteredIn;
+                if (formData.Transmission) filters.transmission = formData.Transmission;
             } else if (category === 'bike') {
                 if (formData.Make) filters.make = formData.Make;
                 if (formData.Model) filters.model = formData.Model;
@@ -124,12 +127,42 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
                 apiCategory = 'house_buy';
                 if (formData.City) filters.city = formData.City;
                 if (formData.Location) filters.location = formData.Location;
+
+                let areaSqFt = Number(formData.Area) || 0;
+                if (formData.AreaUnit === 'Marla') areaSqFt *= 225;
+                if (formData.AreaUnit === 'Kanal') areaSqFt *= 4500;
+                if (areaSqFt > 0) filters.area = areaSqFt;
+
             } else if (category === 'rent') {
                 apiCategory = 'house_rent';
                 if (formData.City) filters.city = formData.City;
                 if (formData.Location) filters.location = formData.Location;
+
+                let areaSqFt = Number(formData.Area) || 0;
+                if (formData.AreaUnit === 'Marla') areaSqFt *= 225;
+                if (formData.AreaUnit === 'Kanal') areaSqFt *= 4500;
+                if (areaSqFt > 0) filters.area = areaSqFt;
             }
             const results = await getRecommendations(apiCategory, budget, filters);
+
+            // Format the area display back to the user's requested unit for properties
+            if (category === 'buy' || category === 'rent') {
+                const unit = formData.AreaUnit || 'sq ft';
+                const divisor = unit === 'Marla' ? 225 : (unit === 'Kanal' ? 4500 : 1);
+
+                if (results && results.length > 0) {
+                    results.forEach((item: any) => {
+                        if (item.specs && item.specs.Area) {
+                            const match = item.specs.Area.match(/([\d,\.]+)/);
+                            if (match) {
+                                const sqft = parseFloat(match[1].replace(/,/g, ''));
+                                const converted = sqft / divisor;
+                                item.specs.Area = `${converted.toFixed(2).replace(/\.?0+$/, '')} ${unit}`;
+                            }
+                        }
+                    });
+                }
+            }
             if (!results || results.length === 0) {
                 setError(`No recommendations found near PKR ${budget.toLocaleString()} for this configuration. Try adjusting your budget or filters.`);
                 setBudgetResult([]);
@@ -149,7 +182,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
     };
     useEffect(() => {
         const serviceType = category === 'buy' ? 'house_buy' : category === 'rent' ? 'house_rent' : category;
-        fetch(`http:
+        fetch(`http://localhost:8000/api/options/${serviceType}`)
             .then(res => res.json())
             .then(data => {
                 setOptions({ raw_current: data });
@@ -259,8 +292,8 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
             } else {
                 serviceType = category === 'buy' ? 'house_buy' : 'house_rent';
                 let areaSqFt = Number(formData.Area) || 0;
-                if (formData.AreaUnit === 'Marla') areaSqFt *= 270;
-                if (formData.AreaUnit === 'Kanal') areaSqFt *= 5400;
+                if (formData.AreaUnit === 'Marla') areaSqFt *= 225;
+                if (formData.AreaUnit === 'Kanal') areaSqFt *= 4500;
                 payloadData = {
                     city: formData.City,
                     location: formData.Location,
@@ -330,7 +363,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
         try {
             const { toPng } = await import('html-to-image');
             const dataUrl = await toPng(element, {
-                backgroundColor: '#e2f0e6', 
+                backgroundColor: '#e2f0e6',
                 cacheBust: true,
                 style: {
                     height: 'auto',
@@ -406,18 +439,18 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
                                     <label className="text-sm font-bold text-[#e2f0e6] uppercase tracking-wide ml-1">
                                         Max Budget (PKR) <span className="text-[#adc74d]">*</span>
                                     </label>
-                                    <input
-                                        type="number"
+                                    <NumberInput
                                         placeholder="e.g. 5000000"
-                                        className="w-full bg-white/90 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4ea96b] text-[#044e22] font-semibold text-lg placeholder-[#044e22]/30"
+                                        className={`w-full font-bold text-lg px-4 ${inputClasses}`}
                                         value={formData.MaxBudget || ''}
-                                        onChange={(e) => handleChange('MaxBudget', e.target.value)}
+                                        onChange={(val) => handleChange('MaxBudget', val)}
+                                        stepAmount={1000}
                                         required
                                     />
-                                    <p className="text-[#e2f0e6]/60 text-xs ml-1">Enter your maximum budget to find best matches.</p>
+                                    <p className="text-[#e2f0e6] text-xs ml-1">Enter your maximum budget to find best matches.</p>
                                 </div>
                             )}
-                            {}
+                            { }
                             <div className={mode === 'budget' ? 'opacity-90' : ''}>
                                 {category === 'car' && <CarInputs key={`car-${mode}`} formData={formData} handleChange={handleChange} options={options} minimal={mode === 'budget'} />}
                                 {category === 'bike' && <BikeInputs key={`bike-${mode}`} formData={formData} handleChange={handleChange} options={options} minimal={mode === 'budget'} />}
@@ -446,7 +479,7 @@ const PredictionForm: React.FC<PredictionFormProps> = ({ category, history, setH
                         </div>
                     </CardContent>
                 </Card>
-                {}
+                { }
                 <RecommendationModal
                     recommendation={selectedRecommendation}
                     onClose={() => setSelectedRecommendation(null)}

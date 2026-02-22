@@ -77,7 +77,7 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
                                 type="button"
                                 onClick={() => {
                                     const text = `Check out this ${category} prediction on PredictaPK! Estimated Price: ${formatPakistaniPrice(result?.prediction ?? 0)}`;
-                                    window.open(`https:
+                                    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
                                 }}
                                 variant="outline"
                                 className="flex-1 bg-transparent text-[#e2f0e6] border-[#25D366] hover:!bg-[#adc74d] hover:text-[#044e22] rounded-xl h-12 font-bold transition-all"
@@ -90,7 +90,7 @@ const PredictionResult: React.FC<PredictionResultProps> = ({ result, category, a
             </div>
             {filteredExplanation.length > 0 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="mt-12">
-                    {}
+                    { }
                     {result?.trends && result.trends.length > 0 && (
                         <Card className="overflow-hidden border-2 border-[#044e22] bg-[#badcc4] shadow-xl shadow-[#044e22]/5 rounded-3xl mb-12">
                             <CardContent className="p-0">

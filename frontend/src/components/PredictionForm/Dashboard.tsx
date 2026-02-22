@@ -29,7 +29,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
     }
     return (
         <div className="space-y-8 mt-4 mb-8 animate-in fade-in duration-700">
-            {}
+            { }
             <div className="text-center space-y-4 max-w-4xl mx-auto py-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                     </div>
                 </motion.div>
             </div>
-            {}
+            { }
             {totalInsights > 0 && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                     transition={{ delay: 0.1 }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto"
                 >
-                    {}
+                    { }
                     <div className="bg-[#bedec7] backdrop-blur-sm p-4 md:p-5 rounded-3xl border border-[#044e22] flex items-center gap-5 shadow-sm hover:shadow-md transition-shadow">
                         <div className="bg-[#044e22] p-3 md:p-3.5 rounded-2xl shadow-sm">
                             <Activity className="w-5 h-5 md:w-6 md:h-6 text-[#adc74d]" />
@@ -66,7 +66,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                             <p className="text-2xl md:text-3xl font-black text-[#044e22]">{totalInsights}</p>
                         </div>
                     </div>
-                    {}
+                    { }
                     <div className="bg-[#bedec7] p-4 md:p-5 rounded-3xl border border-[#044e22] flex items-center gap-5 shadow-sm hover:shadow-md transition-shadow">
                         <div className="bg-[#044e22] p-3 md:p-3.5 rounded-2xl shadow-sm">
                             <Target className="w-5 h-5 md:w-6 md:h-6 text-[#adc74d]" />
@@ -76,7 +76,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                             <p className="text-2xl md:text-3xl font-black text-[#044e22]">{topCategory}</p>
                         </div>
                     </div>
-                    {}
+                    { }
                     <div className="bg-[#bedec7] backdrop-blur-sm p-4 md:p-5 rounded-3xl border border-[#044e22] flex items-center gap-5 shadow-sm hover:shadow-md transition-shadow">
                         <div className="bg-[#044e22] p-3 md:p-3.5 rounded-2xl shadow-sm">
                             <Clock className="w-5 h-5 md:w-6 md:h-6 text-[#adc74d]" />
@@ -88,7 +88,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                     </div>
                 </motion.div>
             )}
-            {}
+            { }
             {recentSearches.length > 0 && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -141,7 +141,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                                         <p className="text-[#044e22] font-black text-xl md:text-2xl tracking-tight">PKR {Number(item.prediction).toLocaleString()}</p>
                                     </div>
                                 </div>
-                                {}
+                                { }
                                 <div className="mt-4 pt-4 border-t border-[#044e22]/10 flex items-center gap-2">
                                     <Button
                                         variant="ghost"
@@ -162,7 +162,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             const text = `Check out this valuation: ${item.details} - PKR ${Number(item.prediction).toLocaleString()}`;
-                                            window.open(`https:
+                                            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
                                         }}
                                     >
                                         <WhatsAppIcon className="w-3.5 h-3.5 mr-1.5" /> WhatsApp
@@ -173,7 +173,7 @@ const Dashboard: React.FC<DashboardProps> = ({ recentSearches, onStartPrediction
                     </div>
                 </motion.div>
             )}
-            {}
+            { }
             <div className="bg-[#bedec7] border-2 border-[#044e22] rounded-3xl p-6 shadow-md relative overflow-hidden">
                 <div className="flex items-center gap-3 mb-6 relative z-10">
                     <div className="bg-[#044e22] p-2.5 rounded-xl shadow-sm">

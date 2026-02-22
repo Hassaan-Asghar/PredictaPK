@@ -13,8 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Predicta PK - AI Market Price Predictions",
+  title: "PredictaPK | AI Market Price Predictions",
   description: "Get instant AI-powered price predictions for cars, bikes, and properties across Pakistan. Powered by advanced machine learning.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "PredictaPK | AI Market Price Predictions",
+    description: "Get instant AI-powered price predictions for cars, bikes, and properties across Pakistan. Your smart AI forecasting companion.",
+    siteName: "PredictaPK",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "PredictaPK Logo",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({

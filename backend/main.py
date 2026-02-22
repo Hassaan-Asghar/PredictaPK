@@ -2,6 +2,7 @@ import pandas as pd
 import joblib
 import json
 import os
+import re
 import shap
 import numpy as np
 import scipy.sparse
@@ -209,32 +210,83 @@ def recommend(input_data: RecommendationInput):
     service = input_data.service_type
     if service not in datasets:
         raise HTTPException(status_code=404, detail="Dataset not available for this service")
-    df = datasets[service].copy()
+    
+    df_raw = datasets[service].copy()
+    
+    # --- Data Sanity Filters to handle dataset anomalies ---
+    if 'year' in df_raw.columns:
+        # Filter out clearly bogus data points: very old standard bikes/cars with very high prices
+        if service == 'bike':
+            # e.g., A 1983 Honda CD 70 for 200k+ is almost certainly bad data
+            df_raw = df_raw[~((df_raw['year'] < 2010) & (df_raw['price'] > 100000))]
+            df_raw = df_raw[df_raw['year'] >= 1990] # Ignore completely vintage/broken year rows for recommendations
+        elif service == 'car':
+            df_raw = df_raw[df_raw['year'] >= 1980]
+
     budget = input_data.budget
     filters = input_data.filters or {}
-    margin = budget * 0.15
-    min_price = budget - margin
-    max_price = budget + margin
-    df = df[(df['price'] >= min_price) & (df['price'] <= max_price)]
-    for key, val in filters.items():
-        if val is None or pd.isna(val) or str(val).strip() == "":
-            continue
-        key = key.lower()
-        if key in df.columns:
-            print(f"Applying filter: {key} = {val} (Before: {len(df)} rows)")
-            if df[key].dtype == 'object':
-                df = df[df[key].astype(str).str.lower() == str(val).lower()]
-                print(f"  -> After object filter: {len(df)} rows")
-            elif pd.api.types.is_numeric_dtype(df[key]) and isinstance(val, (int, float)):
-                df = df[df[key] >= val]
-                print(f"  -> After numeric filter: {len(df)} rows")
+    
+    def normalize_str(val):
+        return re.sub(r'[^a-z0-9]', '', str(val).lower())
+        
+    def normalize_series(series):
+        return series.astype(str).str.lower().str.replace(r'[^a-z0-9]', '', regex=True)
+
+    def apply_filters(base_df):
+        filtered = base_df.copy()
+        for key, val in filters.items():
+            if val is None or pd.isna(val) or str(val).strip() == "":
+                continue
+            key = key.lower()
+            if key in filtered.columns:
+                if filtered[key].dtype == 'object':
+                    val_norm = normalize_str(val)
+                    clean_series = normalize_series(filtered[key])
+                    filtered = filtered[clean_series.str.contains(val_norm, regex=False, na=False)]
+                elif pd.api.types.is_numeric_dtype(filtered[key]) and isinstance(val, (int, float)):
+                    if key in ['area', 'engine_capacity']:
+                        # Give a +/- 20% tolerance on area/engines so 10 Marla doesn't return 20 Marla
+                        margin = val * 0.20
+                        filtered = filtered[(filtered[key] >= (val - margin)) & (filtered[key] <= (val + margin))]
+                    else:
+                        filtered = filtered[filtered[key] >= val]
+        return filtered
+
+    # 1. Budget upper bound (15% flex above budget). We allow any cheaper price.
+    max_price_15 = budget * 1.15
+    df_budget_15 = df_raw[df_raw['price'] <= max_price_15]
+    df = apply_filters(df_budget_15)
+
     if df.empty:
-        print("DF is empty after custom filters! Ignoring custom filters and relying purely on budget to yield SOMETHING")
-        df = datasets[service].copy()
-        df = df[(df['price'] >= min_price) & (df['price'] <= max_price)]
-        if df.empty: return []
+        print("Fallback 1: Original filters, increase upper margin to 30%")
+        max_price_30 = budget * 1.30
+        df_budget_30 = df_raw[df_raw['price'] <= max_price_30]
+        df = apply_filters(df_budget_30)
+
+    if df.empty:
+        print("Fallback 2: Original filters, increase upper margin to 50%")
+        max_price_50 = budget * 1.50
+        df_budget_50 = df_raw[df_raw['price'] <= max_price_50]
+        df = apply_filters(df_budget_50)
+
+    if df.empty:
+        print("No matching items found with the specified filters even with 50% extra max margin.")
+        return []
+
+    # Calculate diff and pick top 5 closest to budget
+    df = df.copy()
+    
+    # Drop near-identical duplicates so we don't return 5 identical cards
+    if service in ['car', 'bike'] and 'year' in df.columns:
+        subset_cols = [c for c in ['make', 'model', 'city', 'year', 'price'] if c in df.columns]
+        df = df.drop_duplicates(subset=subset_cols)
+    else:
+        subset_cols = [c for c in ['city', 'location', 'type', 'area', 'price'] if c in df.columns]
+        df = df.drop_duplicates(subset=subset_cols)
+        
     df['diff'] = abs(df['price'] - budget)
     df = df.sort_values(by='diff').head(5)
+    
     results = []
     for _, row in df.iterrows():
         if service == 'car':
@@ -258,6 +310,7 @@ def recommend(input_data: RecommendationInput):
                 'Bedrooms': row.get('bedrooms', ''),
                 'Baths': row.get('baths', '')
             }
+        
         result = {
             "name": name,
             "price": float(row['price']),
@@ -266,6 +319,7 @@ def recommend(input_data: RecommendationInput):
             "specs": {k: v for k, v in specs.items() if v and str(v).strip() not in ['', 'nan', 'nan cc', 'nan km', 'nan sq ft']}
         }
         results.append(result)
+        
     return results
 if __name__ == "__main__":
     import uvicorn

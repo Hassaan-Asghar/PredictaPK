@@ -10,15 +10,15 @@ PredictaPK is a sophisticated full-stack AI application designed to provide accu
 
 ## Features
 
-*   **Multi-Category Predictions**: Instant valuation for Cars, Motorcycles, and Real Estate (Sales & Rentals).
+*   **Multi Category Predictions**: Instant valuation for Cars, Motorcycles, and Real Estate (Sales & Rentals).
 *   **Explainable AI (XAI)**: Integrated **SHAP (SHapley Additive exPlanations)** visualization to break down how each feature (e.g., Mileage, Location, Model Year) contributes to the final price.
-*   **Real Data Budget Planner**: Enter a maximum budget to find real, best-matching vehicles or properties from the datasets (+/- 15% precise filtering).
+*   **Real Data Budget Planner**: Enter a maximum budget to find real, best matching vehicles or properties from the datasets (+/- 15% precise filtering).
 *   **Market Trends Dashboard**: View dynamic market intelligence such as Top Performing Areas, Vehicle Depreciation, and Category Breakdowns.
 *   **Investment ROI Calculator**: Automatically calculates and displays Annual Rental Yield % when valuing a property for buying.
-*   **Comprehensive Search History**: Track your recent queries automatically, easily recall past valuations, and compare different assets side-by-side.
+*   **Comprehensive Search History**: Track your recent queries automatically, easily recall past valuations, and compare different assets side by side.
 *   **Generate PDF Reports**: Download professional, full-page PDF comparison reports of your predictive valuations.
 *   **Share via WhatsApp**: Instantly share your valuation insights directly with friends or clients via a specialized WhatsApp deep link.
-*   **Smart Input Forms & Validation**: Dynamic forms with searchable dropdowns (`Combobox`), auto-complete, auto-scroll to missing fields, and robust error handling.
+*   **Smart Input Forms & Validation**: Dynamic forms with searchable dropdowns (`Combobox`), auto-complete, auto scroll to missing fields, and robust error handling.
 *   **Modern UI/UX**: Built with a "Midnight Luxe" aesthetic using **Tailwind CSS v4** and **Framer Motion** for smooth animations and transitions.
 
 ## Tech Stack
@@ -77,7 +77,7 @@ Follow these instructions to set up the project locally.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/PredictaPK.git
+git clone https://github.com/Hassaan-Asghar/PredictaPK.git
 cd PredictaPK
 ```
 
@@ -104,7 +104,7 @@ pip install -r requirements.txt
 # Run the server
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
-*The backend API will be available at `http://localhost:8000`.*
+The backend API will be available at `http://localhost:8000`.
 
 ### 3. Frontend Setup
 Open a new terminal, navigate to the frontend directory, and start the Next.js app.
@@ -118,7 +118,7 @@ npm install
 # Run the development server
 npm run dev
 ```
-*The frontend will be available at `http://localhost:3000`.*
+The frontend will be available at `http://localhost:3000`.
 
 ## Deployment
 

@@ -33,10 +33,10 @@ const RecommendationModal: React.FC<RecommendationModalProps> = ({ recommendatio
     };
     const handleShare = () => {
         const text = `Check out this valuation: ${recommendation.name || recommendation.details} - PKR ${Number(recommendation.price || recommendation.prediction).toLocaleString()}`;
-        window.open(`https:
+        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     };
     const displayData = { ...recommendation.specs, ...recommendation.formData };
-    delete displayData.Year; 
+    delete displayData.Year;
     const cleanData = Object.entries(displayData).filter(([_, v]) => v !== '' && v !== null && v !== undefined);
     const modalContent = (
         <AnimatePresence>
@@ -50,7 +50,7 @@ const RecommendationModal: React.FC<RecommendationModalProps> = ({ recommendatio
                         className="bg-[#044e22] border border-[#adc74d]/30 p-6 rounded-[2rem] max-w-lg w-full shadow-2xl relative overflow-hidden text-left"
                         onClick={e => e.stopPropagation()}
                     >
-                        {}
+                        { }
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#4ea96b]/20 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#adc74d]/10 rounded-full blur-2xl -ml-10 -mb-10 pointer-events-none"></div>
                         <button onClick={onClose} className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors bg-white/5 hover:bg-white/10 p-1.5 rounded-full z-10">
