@@ -8,6 +8,9 @@ PredictaPK is a sophisticated full-stack AI application designed to provide accu
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC)
 
+
+## View Live Demo: [PredictaPK](https://predictapk.vercel.app/)
+
 ## Features
 
 *   **Multi Category Predictions**: Instant valuation for Cars, Motorcycles, and Real Estate (Sales & Rentals).
