@@ -8,18 +8,15 @@ PredictaPK is a sophisticated full-stack AI application designed to provide accu
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC)
 
-<<<<<<< Updated upstream
-
 ## View Live Demo: [PredictaPK](https://predictapk.vercel.app/)
-=======
+
 ## Accuracy & Evaluation
-PredictaPK uses **Log-Transformed Random Forest Regressors** trained on rigorously polished datasets to accurately predict across massive price ranges (e.g., 1 Lakh to 1 Crore) without losing detail.
+PredictaPK uses **Log-Transformed Random Forest Regressors** trained on rigorously polished datasets (Kaggle, Zameen, and PakWheels) to accurately predict across massive price ranges (e.g., 1 Lakh to 1 Crore) without losing detail.
 
 *   **Car Prediction:** 92.10% Accuracy ($R^2$), MAE: ~395k PKR
 *   **House Buy Prediction:** 90.24% Accuracy ($R^2$), MAE: ~5.85M PKR
 *   **House Rent Prediction:** 86.65% Accuracy ($R^2$), MAE: ~27.6k PKR
 *   **Bike Prediction:** 91.79% Accuracy ($R^2$), MAE: ~32.1k PKR
->>>>>>> Stashed changes
 
 ## Features
 
