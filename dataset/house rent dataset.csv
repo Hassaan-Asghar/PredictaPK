@@ -137,7 +137,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,F-6,450000,3600,4,4,For Rent
  Islamabad,G-16,160000,2790,5,5,For Rent
  Islamabad,DHA Defence,185000,4500,6,6,For Rent
- Islamabad,F-8,5600000,18000,8,7,For Rent
  Islamabad,Bahria Town,140000,2250,4,5,For Rent
  Islamabad,DHA Defence,85000,4500,3,4,For Rent
  Islamabad,G-15,95000,5400,3,3,For Rent
@@ -2494,7 +2493,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,G-13,100000,900,4,5,For Rent
  Islamabad,E-11,78000,2002,3,4,For Rent
  Islamabad,Bani Gala,85000,2092,4,4,For Rent
- Islamabad,F-6,5500000,24300,10,6,For Rent
  Islamabad,Embassy Road,2000000,14850,6,6,For Rent
  Islamabad,F-8,280000,9000,2,2,For Rent
  Islamabad,G-15,65000,3195,4,4,For Rent
@@ -3633,15 +3631,9 @@ city,location,price,area,bedrooms,baths,purpose
  Abbottabad,PMA Road,42000,1575,3,2,For Rent
  Alipur,Alipur - Muzaffargarh Road,80000,4500,7,5,For Rent
  Alipur,Rajput Colony,15000,450,2,2,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Others,27500,675,4,4,For Rent
  Arifwala,Bahawalnagar Bypass Road,22000,1125,2,3,For Rent
  Arifwala,Burewala Road,20000,3375,6,2,For Rent
- Badin,Agrovil Colony,15,2500,3,4,For Rent
  Bahawalnagar,College Road,18000,2250,2,3,For Rent
  Bahawalnagar,Chishtian Road,28000,1125,4,5,For Rent
  Bahawalnagar,Model Town,12000,1125,3,2,For Rent
@@ -3678,7 +3670,6 @@ city,location,price,area,bedrooms,baths,purpose
  Daska,Pasrur Road,5000,225,1,1,For Rent
  Daska,Younas Abad,35000,900,4,4,For Rent
  Daska,Circular Road,13000,900,2,1,For Rent
- Depalpur,Others,4000,450,1,1,For Rent
  Dera Ghazi Khan,Khayaban-e-Sarwar,20000,2250,4,3,For Rent
  Dera Ghazi Khan,Shahzad Colony,6000,225,1,1,For Rent
  Dera Ghazi Khan,Shahzad Colony,9000,225,1,1,For Rent
@@ -4137,7 +4128,6 @@ city,location,price,area,bedrooms,baths,purpose
  Muzaffargarh,Bypass Road,15000,1125,3,3,For Rent
  Muzaffargarh,Others,12000,1867,2,2,For Rent
  Muzaffargarh,DG Khan Road,11000,675,3,2,For Rent
- Muzaffargarh,Others,8500000,7650,5,5,For Rent
  Nankana Sahib,Shad Bagh Colony,12000,1125,2,2,For Rent
  Nankana Sahib,Ghousia Colony,200000,36000,6,4,For Rent
  Naran,Batakundi,30000,675,2,2,For Rent
@@ -4382,12 +4372,7 @@ city,location,price,area,bedrooms,baths,purpose
  Gujrat,Bara Dari,19000,9000,1,1,For Rent
  Muzaffarabad,Others,24000,1125,2,1,For Rent
  Peshawar,GT Road,1500000,45000,2,3,For Rent
- Sialkot,Citi Housing Society,13200000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,11000000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,10800000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,6400000,1125,3,4,For Rent
  Sialkot,Citi Housing Society,4900000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6500000,1125,3,4,For Rent
  Sukkur,Eid Gah Road,70000,450,4,1,For Rent
  Islamabad,DHA Defence,150000,1642,2,2,For Rent
  Islamabad,Gulberg,130000,1800,3,3,For Rent
@@ -4813,11 +4798,6 @@ city,location,price,area,bedrooms,baths,purpose
  Abbottabad,Narian Road,100000,3600,3,3,For Rent
  Abbottabad,Karakoram Highway,65000,1800,4,4,For Rent
  Alipur,Alipur - Muzaffargarh Road,50000,4500,7,5,For Rent
- Alipur,Rajput Colony,10000000,1125,4,4,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Sahiwal Road,20000,225,2,2,For Rent
  Arifwala,Pakpattan Road,12000,1350,3,2,For Rent
  Astore,Others,50000,1575,5,6,For Rent
@@ -5052,7 +5032,6 @@ city,location,price,area,bedrooms,baths,purpose
  Gujranwala,Citi Housing Society,65000,742,2,2,For Rent
  Gujrat,Shadman Colony,50000,1350,2,2,For Rent
  Gujrat,GT Road,27000,1125,2,2,For Rent
- Gwadar,GDA Industrial Scheme 3,5434000,4500,2,4,For Rent
  Gwadar,Airport Road,50000,2002,4,4,For Rent
  Hafizabad,Alipur Chatha Road,10000,1575,2,2,For Rent
  Hafizabad,Canal Colony,40000,1125,4,4,For Rent
@@ -5071,7 +5050,6 @@ city,location,price,area,bedrooms,baths,purpose
  Hassan Abdal,Mohammad Khan Colony,20000,4500,2,1,For Rent
  Hub Chowki,Hub Industrial & Trading Estates,50000,1282,8,6,For Rent
  Hunza,Karakoram Highway,90000,11250,3,3,For Rent
- Gilgit Baltistan,Hunza,567,1277100,4,7,For Rent
  Hyderabad,Hyderabad Bypass,50000,27000,2,2,For Rent
  Hyderabad,Auto Bhan Road,40000,25425,3,2,For Rent
  Hyderabad,Latifabad,28000,21150,3,2,For Rent
@@ -5170,7 +5148,6 @@ city,location,price,area,bedrooms,baths,purpose
  Layyah,Mohalla Qadirabad,100000,4950,10,10,For Rent
  Layyah,Sugar Mill Road,15000,2250,4,3,For Rent
  Layyah,TDA Colony,15000,675,3,3,For Rent
- Lodhran,National Highway 5,3000,292,1,1,For Rent
  Lower Dir,Gul Abad,30000,2925,5,6,For Rent
  Mandi Bahauddin,Lila Town,35000,2250,4,4,For Rent
  Mandi Bahauddin,Sufi City,55000,1575,4,5,For Rent
@@ -5323,7 +5300,6 @@ city,location,price,area,bedrooms,baths,purpose
  Naran,Mansehra - Naran - Jalkhad - Chilas Road,270000,2250,2,2,For Rent
  Narowal,Shakarghar Road,60000,4500,2,1,For Rent
  Narowal,Others,25000,1800,4,3,For Rent
- Narowal,Circular Road,4500,225,1,1,For Rent
  Nawabshah,Ghulam Hyder Shah Colony,15000,35100,2,1,For Rent
  Nawabshah,Sakrand Road,20000,200,4,3,For Rent
  Nawabshah,Sakrand Road,30000,280,7,7,For Rent
@@ -5554,12 +5530,6 @@ city,location,price,area,bedrooms,baths,purpose
  Wazirabad,Sialkot Road,40000,1125,5,4,For Rent
  Wazirabad,Allahabad,14000,1507,3,2,For Rent
  Wazirabad,Others,17000,1575,2,3,For Rent
- Sialkot,Citi Housing Society,12400000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,12500000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,8600000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,8500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,8800000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6800000,1125,3,4,For Rent
  Islamabad,I-8,500000,2002,2,1,For Rent
  Islamabad,F-8,400000,1192,2,2,For Rent
  Islamabad,H-13,270000,1800,11,7,For Rent
@@ -5576,7 +5546,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,PWD Road,160000,2250,1,1,For Rent
  Islamabad,F-11,25000,202,1,1,For Rent
  Islamabad,F-10,300000,1507,2,2,For Rent
- Islamabad,Blue Area,6000000,23850,1,1,For Rent
  Islamabad,F-11,175000,990,2,1,For Rent
  Islamabad,G-9,85000,697,1,1,For Rent
  Islamabad,Gulberg,40000,810,2,2,For Rent
@@ -5586,7 +5555,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,F-7,450000,2002,4,4,For Rent
  Islamabad,I-8,150000,990,2,2,For Rent
  Islamabad,Gulberg,140000,1125,4,1,For Rent
- Islamabad,G-10,12500000,49950,10,6,For Rent
  Islamabad,I-9,60000,450,1,1,For Rent
  Islamabad,D-17,120000,2250,2,4,For Rent
  Islamabad,F-11,400000,2002,3,1,For Rent
@@ -5978,10 +5946,6 @@ city,location,price,area,bedrooms,baths,purpose
  Ahmedpur East,Others,22000,1125,2,2,For Rent
  Alipur,Others,35000,4500,7,6,For Rent
  Alipur,Others,35000,4500,7,5,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Pakpattan Road,27000,1125,3,3,For Rent
  Arifwala,Others,30000,1125,3,3,For Rent
  Astore,Others,25000,1125,2,2,For Rent
@@ -6114,7 +6078,6 @@ city,location,price,area,bedrooms,baths,purpose
  Faisalabad,Susan Road,60000,1125,1,1,For Rent
  Faisalabad,Citi Housing,200000,4500,6,6,For Rent
  Fateh Jang,GT Road,17000,1125,3,3,For Rent
- Punjab,Fateh Jang,4000,1125,2,1,For Rent
  Galyat,Khanspur,350000,1575,4,3,For Rent
  Galyat,Ayubia,250000,3960,3,2,For Rent
  Galyat,Changla Gali,1200000,4500,4,4,For Rent
@@ -6235,7 +6198,6 @@ city,location,price,area,bedrooms,baths,purpose
  Hassan Abdal,Others,35000,4500,3,3,For Rent
  Hub Chowki,Hub Chowki - Beach Road Link,40000,9000,5,4,For Rent
  Hunza,Karimabad,110000,2250,5,4,For Rent
- Gilgit Baltistan,Hunza,77,17100,7,7,For Rent
  Hyderabad,Nasim Nagar Road,31000,27450,3,3,For Rent
  Hyderabad,Hyderabad Bypass,100000,200,5,6,For Rent
  Hyderabad,Qasimabad,70000,237,3,5,For Rent
@@ -6496,7 +6458,6 @@ city,location,price,area,bedrooms,baths,purpose
  Narowal,College Road,25000,2700,2,3,For Rent
  Narowal,Circular Road,25000,1800,4,3,For Rent
  Narowal,Circular Road,12000,1125,1,1,For Rent
- Narowal,Others,2500,225,1,1,For Rent
  Nasirabad,Others,15000,2790,4,4,For Rent
  Nawabshah,Nawabshah Bridge Road,50000,200,3,3,For Rent
  Nawabshah,Civil Hospital Road,8000,5400,1,1,For Rent
@@ -6738,12 +6699,6 @@ city,location,price,area,bedrooms,baths,purpose
  Wazirabad,GT Road,16000,1575,4,2,For Rent
  Wazirabad,Sialkot Road,30000,1125,5,4,For Rent
  Wazirabad,Nizamabad,26000,900,5,5,For Rent
- Sialkot,Citi Housing Society,11800000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,11600000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,9200000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,7800000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,7200000,1125,3,4,For Rent
  Tando Muhammad Khan,Others,20000,460,1,1,For Rent
  Islamabad,Blue Area,500000,1507,4,1,For Rent
  Islamabad,G-15,35000,697,2,2,For Rent
@@ -6761,7 +6716,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,G-8,2280000,7650,11,6,For Rent
  Islamabad,F-11,220000,1147,2,2,For Rent
  Islamabad,Gulberg,800000,4005,2,2,For Rent
- Islamabad,G-8,6000000,19800,3,3,For Rent
  Islamabad,Jinnah Avenue,150000,450,1,1,For Rent
  Islamabad,I-9,3000000,30150,4,6,For Rent
  Islamabad,F-10,85000,450,1,1,For Rent
@@ -7157,11 +7111,6 @@ city,location,price,area,bedrooms,baths,purpose
  Abbottabad,Kakul,20000,3375,3,4,For Rent
  Ahmedpur East,Others,24000,2250,3,2,For Rent
  Alipur,Others,100000,202,3,2,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Bahawalnagar Bypass Road,7000,450,2,1,For Rent
  Arifwala,Burewala Road,150000,4500,3,2,For Rent
  Arifwala,Bahawalnagar Bypass Road,120000,4500,7,5,For Rent
@@ -7477,7 +7426,6 @@ city,location,price,area,bedrooms,baths,purpose
  Jhelum,Citi Housing Scheme,26000,450,2,2,For Rent
  Jhelum,Citi Housing Scheme,40000,1125,4,4,For Rent
  Jhelum,Citi Housing Scheme,32000,900,3,3,For Rent
- Kamalia,Others,3500,900,2,1,For Rent
  Kamoki,GT Road,32000,1125,5,3,For Rent
  Kasur,Kot Radha Kishan,17000,1350,3,2,For Rent
  Kasur,Ferozpur Road,65000,2250,5,5,For Rent
@@ -7666,7 +7614,6 @@ city,location,price,area,bedrooms,baths,purpose
  Muridke,Others,25000,1125,5,4,For Rent
  Muridke,Others,18000,1125,5,4,For Rent
  Muridke,GT Road,50000,2250,6,5,For Rent
- Muridke,Others,2580,27450,8,1,For Rent
  Murree,Murree Improvement Trust Colony,450000,9000,3,3,For Rent
  Murree,Murree Expressway,300000,13500,7,5,For Rent
  Murree,Murree Expressway,35000,900,1,1,For Rent
@@ -7683,8 +7630,6 @@ city,location,price,area,bedrooms,baths,purpose
  Nankana Sahib,Mangtanwala Road,10000,1350,4,3,For Rent
  Nankana Sahib,Nankana Sahib Bypass,100000,36000,6,4,For Rent
  Naran,Batakundi,300000,6750,2,2,For Rent
- Narowal,College Road,2500,202,1,1,For Rent
- Narowal,Eidgah Road,3000,225,1,1,For Rent
  Narowal,Shakarghar Road,40000,1125,6,6,For Rent
  Narowal,College Road,15000,1350,4,3,For Rent
  Narowal,Circular Road,15000,2025,5,2,For Rent
@@ -7930,13 +7875,6 @@ city,location,price,area,bedrooms,baths,purpose
  Wazirabad,Sialkot Road,30000,1125,5,4,For Rent
  Wazirabad,Sialkot Road,20000,1125,2,2,For Rent
  Mandi Bahauddin,Phalia Mandi Bahauddin Road,5000000,135000,7,6,For Rent
- Multan,Buch Executive Villas,6500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,14200000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,10900000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,13400000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,5400000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,5600000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,5500000,1125,3,4,For Rent
  Islamabad,I-9,5000000,27900,4,5,For Rent
  Islamabad,PWD Road,30000,450,2,2,For Rent
  Islamabad,I-9,550000,2497,1,3,For Rent
@@ -7965,7 +7903,6 @@ city,location,price,area,bedrooms,baths,purpose
  Islamabad,I-10,2100000,13950,1,1,For Rent
  Islamabad,DHA Defence,200000,1710,1,2,For Rent
  Islamabad,G-9,850000,4950,9,3,For Rent
- Islamabad,F-7,7000000,25200,6,6,For Rent
  Islamabad,Top City 1,1500000,11700,11,7,For Rent
  Islamabad,G-7,1000000,4005,11,6,For Rent
  Islamabad,Fateh Jang Road,250000,9000,3,2,For Rent
@@ -8020,11 +7957,9 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,Shahra-e-Faisal,140000,27450,3,2,For Rent
  Karachi,Shahra-e-Faisal,1500000,1200,6,5,For Rent
  Karachi,Shahra-e-Faisal,375000,37575,4,3,For Rent
- Karachi,Bin Qasim Town,7000000,22222,11,6,For Rent
  Karachi,Jamshed Town,2500000,400,2,4,For Rent
  Karachi,Jamshed Town,170000,250,4,4,For Rent
  Karachi,DHA Defence,2600000,1111,10,3,For Rent
- Karachi,Shahra-e-Faisal,6000000,3333,11,6,For Rent
  Karachi,DHA Defence,67000,19350,1,1,For Rent
  Karachi,Gulistan-e-Jauhar,100000,240,4,3,For Rent
  Karachi,DHA Defence,50000,15075,1,2,For Rent
@@ -8359,7 +8294,6 @@ city,location,price,area,bedrooms,baths,purpose
  Faisalabad,Sargodha Road,900000,12150,3,4,For Rent
  Faisalabad,Susan Road,80000,990,1,1,For Rent
  Faisalabad,Kohinoor City,16000,292,1,1,For Rent
- Faisalabad,Sahianwala,7000000,199800,1,2,For Rent
  Faisalabad,Samundari Road,200000,9000,1,1,For Rent
  Faisalabad,Jaranwala Road,300000,18000,1,1,For Rent
  Faisalabad,Susan Road,130000,1192,1,1,For Rent
@@ -8436,7 +8370,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,Gulshan-e-Iqbal Town,200000,500,7,6,For Rent
  Karachi,Clifton,200000,37575,2,1,For Rent
  Karachi,Gulistan-e-Jauhar,190000,12600,1,1,For Rent
- Karachi,Shahra-e-Faisal,6000000,3333,11,7,For Rent
  Karachi,Shahra-e-Faisal,1400000,400,4,4,For Rent
  Karachi,Shahra-e-Faisal,2000000,1111,11,7,For Rent
  Karachi,Korangi,1800000,6111,10,7,For Rent
@@ -8448,7 +8381,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,North Nazimabad,75000,256,4,3,For Rent
  Karachi,North Nazimabad,225000,650,3,2,For Rent
  Karachi,DHA Defence,75000,22500,1,1,For Rent
- Karachi,Shaheed Millat Road,6000000,3333,4,4,For Rent
  Karachi,Gulshan-e-Iqbal Town,120000,240,5,3,For Rent
  Karachi,Shahra-e-Faisal,1850000,917,11,6,For Rent
  Karachi,Shahra-e-Faisal,3000000,1556,8,4,For Rent
@@ -8456,7 +8388,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,DHA Defence,800000,444,5,2,For Rent
  Karachi,DHA Defence,100000,28125,1,1,For Rent
  Karachi,Jamshed Town,750000,600,9,6,For Rent
- Karachi,Shahra-e-Faisal,6000000,6111,11,10,For Rent
  Karachi,Shahra-e-Faisal,60000,20025,1,2,For Rent
  Karachi,Shahra-e-Faisal,150000,29925,1,1,For Rent
  Karachi,Shahra-e-Faisal,2400000,3000,11,10,For Rent
@@ -8619,7 +8550,6 @@ city,location,price,area,bedrooms,baths,purpose
  Toba Tek Singh,Canal Road,20000,1800,6,2,For Rent
  Wah,Wah Cantt,500000,2700,10,10,For Rent
  Wazirabad,Haji Park,25000,1125,7,2,For Rent
- Islamabad,D-12,13000000,84150,11,7,For Rent
  Islamabad,F-7,350000,1192,3,2,For Rent
  Islamabad,Blue Area,450000,1710,4,2,For Rent
  Islamabad,G-6,924000,2790,2,1,For Rent
@@ -8646,7 +8576,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,Gulshan-e-Iqbal Town,150000,400,6,4,For Rent
  Karachi,Gulshan-e-Iqbal Town,350000,400,6,7,For Rent
  Karachi,Gulshan-e-Iqbal Town,200000,400,3,3,For Rent
- Karachi,Jamshed Town,6000000,3333,11,7,For Rent
  Karachi,Shahra-e-Faisal,300000,600,5,3,For Rent
  Karachi,DHA Defence,65000,14175,1,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,135000,300,3,3,For Rent
@@ -8655,7 +8584,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,Shahra-e-Faisal,145000,40050,3,2,For Rent
  Karachi,DHA Defence,65000,20025,1,1,For Rent
  Karachi,Bin Qasim Town,3600000,13333,11,7,For Rent
- Karachi,Korangi,7500000,4000,11,6,For Rent
  Karachi,Gulshan-e-Iqbal Town,450000,1000,9,6,For Rent
  Karachi,Gulshan-e-Iqbal Town,600000,26325,4,4,For Rent
  Karachi,Jamshed Town,500000,500,4,4,For Rent
@@ -8663,7 +8591,6 @@ city,location,price,area,bedrooms,baths,purpose
  Karachi,Jamshed Town,100000,22500,4,2,For Rent
  Karachi,Shahra-e-Faisal,165000,42525,2,2,For Rent
  Karachi,Bin Qasim Town,2100000,6667,11,6,For Rent
- Karachi,Bin Qasim Town,7500000,33333,11,6,For Rent
  Karachi,DHA Defence,350000,22500,4,4,For Rent
  Karachi,DHA Defence,65000,22500,2,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,160000,27000,4,4,For Rent
@@ -8836,7 +8763,6 @@ city,location,price,area,bedrooms,baths,purpose
  Wah,New City,23000,247,1,1,For Rent
  Wah,Wah Cantt,90000,900,1,1,For Rent
  Wazirabad,Bharoke Cheema Road,200000,2250,1,2,For Rent
-Karachi,North Nazimabad Block B,11500000,1100,2,2,For Rent
 Lahore,DHA Town Phase 9,100000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,50000,520,1,1,For Rent
 Lahore,Johar Town,70000,2700,2,2,For Rent
@@ -9649,7 +9575,6 @@ Lahore,Fazlia Colony,42000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,46000,1125,2,2,For Rent
 Lahore,DHA Phase 5,360000,4500,5,6,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector F,62000,509,1,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
@@ -9808,7 +9733,6 @@ Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,DHA Phase 5,85000,4500,2,2,For Rent
 Lahore,DHA Phase 5,150000,2250,4,4,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Johar Town,28000,335,1,1,For Rent
 Lahore,DHA Phase 5,70000,2250,2,2,For Rent
 Lahore,DHA Phase 6,85000,2250,2,2,For Rent
@@ -10963,7 +10887,6 @@ Lahore,Bahria Town - Sector B,53000,500,1,1,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Punjab Small,70000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,55000,495,1,1,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector C,52000,495,1,1,For Rent
 Lahore,Bahria Town - Sector C,64000,506,1,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -11097,7 +11020,6 @@ Lahore,DHA Phase 7,92000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Pakistan Millitary Accounts,35000,1125,2,3,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,Johar Town Phase 2 - Block R1,45000,1125,1,2,For Rent
 Lahore,Sher Ali Road,25000,675,2,2,For Rent
 Lahore,DHA Phase 7,85000,2250,2,3,For Rent
@@ -11155,7 +11077,6 @@ Lahore,Fazlia Colony,45000,1125,2,2,For Rent
 Lahore,Bahria Town - Sector C,66000,500,1,1,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Gulberg 3,270000,2700,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Wapda Town Phase 1,130000,2250,5,6,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -12311,7 +12232,6 @@ Lahore,Bahria Town - Sector C,54000,507,1,1,For Rent
 Lahore,Faisal Town,45000,2250,2,2,For Rent
 Lahore,DHA Phase 7,138000,4500,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),45000,1125,2,2,For Rent
-Lahore,Rehmanpura Colony,6500000,787,3,4,For Rent
 Lahore,DHA Phase 4,640000,1200,2,2,For Rent
 Lahore,Alfalah Town,35000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -12367,7 +12287,6 @@ Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Johar Town Phase 2 - Block J3,50000,1237,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,PIA Housing Scheme,35000,787,1,1,For Rent
@@ -12494,7 +12413,6 @@ Lahore,DHA Phase 8,95000,2250,2,2,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,105000,2250,2,2,For Rent
 Lahore,DHA Phase 8,107000,2250,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,88000,2250,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -12512,7 +12430,6 @@ Lahore,Shadman,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,45000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -12774,7 +12691,6 @@ Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
@@ -13799,7 +13715,6 @@ Lahore,DHA Phase 8,96000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,DHA Phase 8 - Ex Park View,150000,2250,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,DHA Phase 7,93000,2250,2,3,For Rent
 Lahore,DHA Phase 8,95000,2250,2,3,For Rent
@@ -13816,8 +13731,6 @@ Lahore,DHA Phase 7,87000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,DHA Phase 6,90000,1125,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,77000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
@@ -14143,7 +14056,6 @@ Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Gulberg,280000,3375,3,4,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),43000,1125,2,2,For Rent
 Lahore,Muslim Town,82000,2250,2,2,For Rent
@@ -14754,7 +14666,6 @@ Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Al Ameen Society,50000,2250,2,2,For Rent
 Lahore,Gulberg,245000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector D,6800000,550,1,1,For Rent
 Lahore,Punjab Small,45000,1575,2,2,For Rent
 Lahore,Gulberg,200000,2250,3,3,For Rent
 Lahore,Alfalah Town,50000,900,3,3,For Rent
@@ -15279,7 +15190,6 @@ Lahore,Johar Town,73000,1125,5,5,For Rent
 Lahore,Johar Town,85000,1125,5,5,For Rent
 Lahore,Johar Town,145000,2250,5,5,For Rent
 Lahore,Johar Town,65000,2250,2,2,For Rent
-Lahore,Johar Town,22000000,4500,5,5,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,82000,2250,2,2,For Rent
 Lahore,Model Town Extension,85000,2250,2,2,For Rent
@@ -15411,7 +15321,6 @@ Lahore,DHA Phase 4,590000,1200,2,2,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,Cavalry Ground,80000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector D,35000,1125,2,2,For Rent
-Lahore,DHA Phase 4,49000000,1575,2,2,For Rent
 Lahore,DHA Phase 4,170000,900,2,2,For Rent
 Lahore,DHA Phase 4,195000,600,1,1,For Rent
 Lahore,DHA Phase 7,250000,4500,4,4,For Rent
@@ -15456,7 +15365,6 @@ Lahore,Bahria Town - Sector E,70000,630,1,1,For Rent
 Lahore,Bahria Town - Sector E,45000,570,1,1,For Rent
 Lahore,Bahria Town - Sector E,65000,670,1,1,For Rent
 Lahore,Awan Town,60000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,14000000,675,1,1,For Rent
 Lahore,DHA Phase 6,160000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,580,1,1,For Rent
 Lahore,Model Town Link Road,40000,1125,2,2,For Rent
@@ -15506,7 +15414,6 @@ Lahore,Wapda Town,40000,1125,2,2,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Wapda Town,70000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,50000,450,1,1,For Rent
-Lahore,Bahria Town - Sector D,3500,1125,2,2,For Rent
 Lahore,Model Town,39000,1125,2,2,For Rent
 Lahore,Faisal Town,55000,2250,2,2,For Rent
 Lahore,Bahria Town - Sector E,55000,500,1,1,For Rent
@@ -15538,7 +15445,6 @@ Lahore,Model Town Extension,79000,2250,2,3,For Rent
 Lahore,Model Town Extension,70000,2250,2,3,For Rent
 Lahore,Model Town Extension,67000,2250,2,3,For Rent
 Lahore,Bao Wala Barki Road,30000,675,4,3,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Model Town Extension,78000,2250,2,3,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,620000,1200,2,2,For Rent
@@ -15700,7 +15606,6 @@ Rawalpindi,Bahria Town Phase 8,170000,1125,3,3,For Rent
 Rawalpindi,Adyala Road,28000,1125,2,3,For Rent
 Rawalpindi,Jamia Masjid Road,15000,2272,1,1,For Rent
 Rawalpindi,Airport Housing Society Rawalpindi,50000,1125,4,4,For Rent
-Rawalpindi,Clifton Township,30,1125,2,2,For Rent
 Rawalpindi,Askari 14,130000,2250,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,75000,1575,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,85000,1575,5,5,For Rent
@@ -16480,7 +16385,6 @@ Lahore,Bahria Town - Sector C,67000,520,1,1,For Rent
 Lahore,Punjab Board Of Revenue (BOR),26000,787,1,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Model Town Extension,82000,2250,2,2,For Rent
-Lahore,Lahore Cantt,70,1125,3,4,For Rent
 Lahore,Lahore Cantt,300000,4500,5,6,For Rent
 Lahore,Punjab Board Of Revenue (BOR),82000,2250,2,2,For Rent
 Lahore,Faisal Town,82000,2250,2,2,For Rent
@@ -16891,7 +16795,6 @@ Lahore,Shadman 1,40000,1125,2,2,For Rent
 Lahore,Johar Town,130000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,500,1,1,For Rent
 Lahore,Nasheman E Iqbal Housing Society,80000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,8300000,709,1,1,For Rent
 Lahore,Bahria Town - Sector E,62000,500,1,1,For Rent
 Lahore,Shadman,36000,1125,2,2,For Rent
 Lahore,Gulberg 1,215000,2250,4,4,For Rent
@@ -17009,7 +16912,6 @@ Lahore,Askari 11,85000,2250,3,3,For Rent
 Lahore,DHA Phase 8 - Ex Park View,135000,2250,4,5,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,140000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector C,12000000,580,1,1,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -17069,7 +16971,6 @@ Lahore,Gulberg 3,210000,2700,3,3,For Rent
 Lahore,Gulberg 3,135000,2250,2,2,For Rent
 Lahore,Gulberg 3,375000,4500,4,4,For Rent
 Lahore,Gulberg 3,215000,2700,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Model Town Extension,75000,2250,2,3,For Rent
 Lahore,Model Town Extension,74000,2250,2,3,For Rent
 Lahore,Model Town Link Road,82000,2250,2,3,For Rent
@@ -17386,7 +17287,6 @@ Lahore,Rehmanpura Colony,110000,787,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,72000,1125,3,4,For Rent
 Lahore,Gulberg 3,265000,2700,3,4,For Rent
 Lahore,Rehmanpura Colony,42000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector E,7600000,528,1,1,For Rent
 Lahore,Bahria Town - Sector E,60000,528,1,1,For Rent
 Lahore,DHA Phase 4,140000,2250,3,3,For Rent
 Lahore,DHA Phase 2,375000,9000,6,6,For Rent
@@ -17588,7 +17488,6 @@ Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Bahria Town - Sector C,67000,450,1,1,For Rent
 Lahore,DHA Phase 4,95000,4500,2,2,For Rent
 Lahore,Rehmanpura Colony,37000,1125,2,2,For Rent
-Lahore,Allama Iqbal Town - Neelum Block,3300,1125,2,1,For Rent
 Lahore,DHA Phase 3,515000,9000,7,8,For Rent
 Lahore,Bahria Town - Sector C,238000,2250,4,5,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -18542,7 +18441,6 @@ Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,39000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector C,13000000,540,1,1,For Rent
 Lahore,Faisal Town,37000,1125,2,2,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -18576,7 +18474,6 @@ Lahore,Muslim Town,70000,1125,3,4,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,55000,350,1,1,For Rent
 Lahore,Bahria Town - Sector D,65000,500,1,1,For Rent
-Lahore,DHA Phase 6,120000000,4500,5,6,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,630000,1200,2,2,For Rent
 Lahore,DHA Phase 4,590000,1200,2,2,For Rent
@@ -18829,7 +18726,6 @@ Multan,DHA Villas,130000,2700,5,6,For Rent
 Multan,Shadab Colony,30000,900,2,2,For Rent
 Multan,Northern Bypass,85000,2250,4,4,For Rent
 Multan,Bahadurpur,22000,900,2,1,For Rent
-Multan,Askari Colony Ph3,15000000,4500,4,5,For Rent
 Multan,Shah Rukn-E-Alam Colony,27000,1125,2,2,For Rent
 Multan,Northern Bypass,40000,1575,2,2,For Rent
 Multan,DHA,150000,4500,5,6,For Rent
@@ -20059,7 +19955,6 @@ Lahore,Askari 11,90000,2250,3,3,For Rent
 Lahore,DHA Phase 8 Ex AA (Air Avenue),140000,2250,4,5,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector E,12200000,570,1,1,For Rent
 Lahore,Gulberg 3,180000,2700,2,3,For Rent
 Lahore,DHA Phase 4,100000,6300,3,3,For Rent
 Lahore,Bahria Town - Sector E,58000,600,1,1,For Rent
@@ -26105,7 +26000,6 @@ Islamabad,F-7,2800000,9000,3,6,Rent
 Islamabad,F-7,700000,4500,6,6,Rent
 Islamabad,F-7,600000,5400,6,6,Rent
 Islamabad,F-7,250000,4500,2,2,Rent
-Islamabad,F-7,5500000,18000,10,6,Rent
 Islamabad,F-7,3000000,9000,3,3,Rent
 Islamabad,F-7,700000,4500,5,6,Rent
 Islamabad,F-7,780000,4500,5,6,Rent
@@ -32793,7 +32687,6 @@ Karachi,DHA Defence,85000,42525,3,4,Rent
 Karachi,DHA Defence,500000,1000,5,4,Rent
 Karachi,DHA Defence,450000,1000,4,3,Rent
 Karachi,DHA Defence,350000,500,5,6,Rent
-Karachi,DHA Defence,6000000,2000,6,4,Rent
 Karachi,DHA Defence,200000,500,4,5,Rent
 Karachi,DHA Defence,140000,22500,4,6,Rent
 Karachi,DHA Defence,225000,500,3,3,Rent
@@ -34441,7 +34334,6 @@ Karachi,Gulistan-e-Jauhar (Fatima Golf Residency),145000,43650,3,6,Rent
 Karachi,Gulistan-e-Jauhar (Fatima Golf Residency),52000,43650,3,3,Rent
 Karachi,Gulshan-e-Areesha,25000,27000,3,4,Rent
 Karachi,Gulshan-e-Azeem,28000,27000,2,3,Rent
-Karachi,Gulshan-e-Azeem,9000000,27000,2,2,Rent
 Karachi,Gulshan-e-Iqbal,50000,220,2,3,Rent
 Karachi,Gulshan-e-Iqbal,50000,36000,2,2,Rent
 Karachi,Gulshan-e-Iqbal Town,95000,200,3,4,Rent
@@ -44469,7 +44361,6 @@ Lahore,Green City,110000,2250,4,5,Rent
 Lahore,Green City,110000,2250,4,5,Rent
 Lahore,Green City,60000,1237,3,4,Rent
 Lahore,Green City,120000,2250,4,5,Rent
-Lahore,Green City,2500,225,1,1,Rent
 Lahore,Green City,12000,225,1,1,Rent
 Lahore,Green City,18000,225,2,3,Rent
 Lahore,Green City,175000,4500,5,6,Rent
@@ -47544,23 +47435,6 @@ Lahore,Shah Jamal,120000,4500,4,4,Rent
 Lahore,Shah Khawar Town,65000,1350,3,4,Rent
 Lahore,Shah Khawar Town,65000,1350,3,4,Rent
 Lahore,Shaheen Colony,30000,1125,3,2,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,5400,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,562,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
 Lahore,Shalimar Link Road,45000,1800,3,3,Rent
 Lahore,Shalimar Link Road,30000,1350,2,1,Rent
 Lahore,Shalimar Link Road,65000,1125,5,5,Rent
@@ -52204,7 +52078,6 @@ Rawalpindi,Westridge,130000,4500,5,3,Rent
 Rawalpindi,Yousaf Colony,40000,1350,2,2,Rent
 Rawalpindi,Yousaf Colony,40000,1350,2,2,Rent
 Rawalpindi,Yousaf Colony,40000,1350,2,2,Rent
-Karachi,North Nazimabad Block B,11500000,1100,2,2,For Rent
 Lahore,DHA Town Phase 9,100000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,50000,520,1,1,For Rent
 Lahore,Johar Town,70000,2700,2,2,For Rent
@@ -53017,7 +52890,6 @@ Lahore,Fazlia Colony,42000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,46000,1125,2,2,For Rent
 Lahore,DHA Phase 5,360000,4500,5,6,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector F,62000,509,1,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
@@ -53176,7 +53048,6 @@ Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,DHA Phase 5,85000,4500,2,2,For Rent
 Lahore,DHA Phase 5,150000,2250,4,4,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Johar Town,28000,335,1,1,For Rent
 Lahore,DHA Phase 5,70000,2250,2,2,For Rent
 Lahore,DHA Phase 6,85000,2250,2,2,For Rent
@@ -54331,7 +54202,6 @@ Lahore,Bahria Town - Sector B,53000,500,1,1,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Punjab Small,70000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,55000,495,1,1,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector C,52000,495,1,1,For Rent
 Lahore,Bahria Town - Sector C,64000,506,1,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -54465,7 +54335,6 @@ Lahore,DHA Phase 7,92000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Pakistan Millitary Accounts,35000,1125,2,3,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,Johar Town Phase 2 - Block R1,45000,1125,1,2,For Rent
 Lahore,Sher Ali Road,25000,675,2,2,For Rent
 Lahore,DHA Phase 7,85000,2250,2,3,For Rent
@@ -54523,7 +54392,6 @@ Lahore,Fazlia Colony,45000,1125,2,2,For Rent
 Lahore,Bahria Town - Sector C,66000,500,1,1,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Gulberg 3,270000,2700,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Wapda Town Phase 1,130000,2250,5,6,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -55679,7 +55547,6 @@ Lahore,Bahria Town - Sector C,54000,507,1,1,For Rent
 Lahore,Faisal Town,45000,2250,2,2,For Rent
 Lahore,DHA Phase 7,138000,4500,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),45000,1125,2,2,For Rent
-Lahore,Rehmanpura Colony,6500000,787,3,4,For Rent
 Lahore,DHA Phase 4,640000,1200,2,2,For Rent
 Lahore,Alfalah Town,35000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -55735,7 +55602,6 @@ Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Johar Town Phase 2 - Block J3,50000,1237,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,PIA Housing Scheme,35000,787,1,1,For Rent
@@ -55862,7 +55728,6 @@ Lahore,DHA Phase 8,95000,2250,2,2,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,105000,2250,2,2,For Rent
 Lahore,DHA Phase 8,107000,2250,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,88000,2250,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -55880,7 +55745,6 @@ Lahore,Shadman,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,45000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -56142,7 +56006,6 @@ Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
@@ -57167,7 +57030,6 @@ Lahore,DHA Phase 8,96000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,DHA Phase 8 - Ex Park View,150000,2250,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,DHA Phase 7,93000,2250,2,3,For Rent
 Lahore,DHA Phase 8,95000,2250,2,3,For Rent
@@ -57184,8 +57046,6 @@ Lahore,DHA Phase 7,87000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,DHA Phase 6,90000,1125,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,77000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
@@ -57511,7 +57371,6 @@ Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Gulberg,280000,3375,3,4,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),43000,1125,2,2,For Rent
 Lahore,Muslim Town,82000,2250,2,2,For Rent
@@ -58122,7 +57981,6 @@ Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Al Ameen Society,50000,2250,2,2,For Rent
 Lahore,Gulberg,245000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector D,6800000,550,1,1,For Rent
 Lahore,Punjab Small,45000,1575,2,2,For Rent
 Lahore,Gulberg,200000,2250,3,3,For Rent
 Lahore,Alfalah Town,50000,900,3,3,For Rent
@@ -58647,7 +58505,6 @@ Lahore,Johar Town,73000,1125,5,5,For Rent
 Lahore,Johar Town,85000,1125,5,5,For Rent
 Lahore,Johar Town,145000,2250,5,5,For Rent
 Lahore,Johar Town,65000,2250,2,2,For Rent
-Lahore,Johar Town,22000000,4500,5,5,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,82000,2250,2,2,For Rent
 Lahore,Model Town Extension,85000,2250,2,2,For Rent
@@ -58779,7 +58636,6 @@ Lahore,DHA Phase 4,590000,1200,2,2,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,Cavalry Ground,80000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector D,35000,1125,2,2,For Rent
-Lahore,DHA Phase 4,49000000,1575,2,2,For Rent
 Lahore,DHA Phase 4,170000,900,2,2,For Rent
 Lahore,DHA Phase 4,195000,600,1,1,For Rent
 Lahore,DHA Phase 7,250000,4500,4,4,For Rent
@@ -58824,7 +58680,6 @@ Lahore,Bahria Town - Sector E,70000,630,1,1,For Rent
 Lahore,Bahria Town - Sector E,45000,570,1,1,For Rent
 Lahore,Bahria Town - Sector E,65000,670,1,1,For Rent
 Lahore,Awan Town,60000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,14000000,675,1,1,For Rent
 Lahore,DHA Phase 6,160000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,580,1,1,For Rent
 Lahore,Model Town Link Road,40000,1125,2,2,For Rent
@@ -58874,7 +58729,6 @@ Lahore,Wapda Town,40000,1125,2,2,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Wapda Town,70000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,50000,450,1,1,For Rent
-Lahore,Bahria Town - Sector D,3500,1125,2,2,For Rent
 Lahore,Model Town,39000,1125,2,2,For Rent
 Lahore,Faisal Town,55000,2250,2,2,For Rent
 Lahore,Bahria Town - Sector E,55000,500,1,1,For Rent
@@ -58906,7 +58760,6 @@ Lahore,Model Town Extension,79000,2250,2,3,For Rent
 Lahore,Model Town Extension,70000,2250,2,3,For Rent
 Lahore,Model Town Extension,67000,2250,2,3,For Rent
 Lahore,Bao Wala Barki Road,30000,675,4,3,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Model Town Extension,78000,2250,2,3,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,620000,1200,2,2,For Rent
@@ -59068,7 +58921,6 @@ Rawalpindi,Bahria Town Phase 8,170000,1125,3,3,For Rent
 Rawalpindi,Adyala Road,28000,1125,2,3,For Rent
 Rawalpindi,Jamia Masjid Road,15000,2272,1,1,For Rent
 Rawalpindi,Airport Housing Society Rawalpindi,50000,1125,4,4,For Rent
-Rawalpindi,Clifton Township,30,1125,2,2,For Rent
 Rawalpindi,Askari 14,130000,2250,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,75000,1575,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,85000,1575,5,5,For Rent
@@ -59848,7 +59700,6 @@ Lahore,Bahria Town - Sector C,67000,520,1,1,For Rent
 Lahore,Punjab Board Of Revenue (BOR),26000,787,1,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Model Town Extension,82000,2250,2,2,For Rent
-Lahore,Lahore Cantt,70,1125,3,4,For Rent
 Lahore,Lahore Cantt,300000,4500,5,6,For Rent
 Lahore,Punjab Board Of Revenue (BOR),82000,2250,2,2,For Rent
 Lahore,Faisal Town,82000,2250,2,2,For Rent
@@ -60259,7 +60110,6 @@ Lahore,Shadman 1,40000,1125,2,2,For Rent
 Lahore,Johar Town,130000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,500,1,1,For Rent
 Lahore,Nasheman E Iqbal Housing Society,80000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,8300000,709,1,1,For Rent
 Lahore,Bahria Town - Sector E,62000,500,1,1,For Rent
 Lahore,Shadman,36000,1125,2,2,For Rent
 Lahore,Gulberg 1,215000,2250,4,4,For Rent
@@ -60377,7 +60227,6 @@ Lahore,Askari 11,85000,2250,3,3,For Rent
 Lahore,DHA Phase 8 - Ex Park View,135000,2250,4,5,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,140000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector C,12000000,580,1,1,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -60437,7 +60286,6 @@ Lahore,Gulberg 3,210000,2700,3,3,For Rent
 Lahore,Gulberg 3,135000,2250,2,2,For Rent
 Lahore,Gulberg 3,375000,4500,4,4,For Rent
 Lahore,Gulberg 3,215000,2700,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Model Town Extension,75000,2250,2,3,For Rent
 Lahore,Model Town Extension,74000,2250,2,3,For Rent
 Lahore,Model Town Link Road,82000,2250,2,3,For Rent
@@ -60754,7 +60602,6 @@ Lahore,Rehmanpura Colony,110000,787,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,72000,1125,3,4,For Rent
 Lahore,Gulberg 3,265000,2700,3,4,For Rent
 Lahore,Rehmanpura Colony,42000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector E,7600000,528,1,1,For Rent
 Lahore,Bahria Town - Sector E,60000,528,1,1,For Rent
 Lahore,DHA Phase 4,140000,2250,3,3,For Rent
 Lahore,DHA Phase 2,375000,9000,6,6,For Rent
@@ -60956,7 +60803,6 @@ Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Bahria Town - Sector C,67000,450,1,1,For Rent
 Lahore,DHA Phase 4,95000,4500,2,2,For Rent
 Lahore,Rehmanpura Colony,37000,1125,2,2,For Rent
-Lahore,Allama Iqbal Town - Neelum Block,3300,1125,2,1,For Rent
 Lahore,DHA Phase 3,515000,9000,7,8,For Rent
 Lahore,Bahria Town - Sector C,238000,2250,4,5,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -61910,7 +61756,6 @@ Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,39000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector C,13000000,540,1,1,For Rent
 Lahore,Faisal Town,37000,1125,2,2,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -61944,7 +61789,6 @@ Lahore,Muslim Town,70000,1125,3,4,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,55000,350,1,1,For Rent
 Lahore,Bahria Town - Sector D,65000,500,1,1,For Rent
-Lahore,DHA Phase 6,120000000,4500,5,6,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,630000,1200,2,2,For Rent
 Lahore,DHA Phase 4,590000,1200,2,2,For Rent
@@ -62197,7 +62041,6 @@ Multan,DHA Villas,130000,2700,5,6,For Rent
 Multan,Shadab Colony,30000,900,2,2,For Rent
 Multan,Northern Bypass,85000,2250,4,4,For Rent
 Multan,Bahadurpur,22000,900,2,1,For Rent
-Multan,Askari Colony Ph3,15000000,4500,4,5,For Rent
 Multan,Shah Rukn-E-Alam Colony,27000,1125,2,2,For Rent
 Multan,Northern Bypass,40000,1575,2,2,For Rent
 Multan,DHA,150000,4500,5,6,For Rent
@@ -63427,7 +63270,6 @@ Lahore,Askari 11,90000,2250,3,3,For Rent
 Lahore,DHA Phase 8 Ex AA (Air Avenue),140000,2250,4,5,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector E,12200000,570,1,1,For Rent
 Lahore,Gulberg 3,180000,2700,2,3,For Rent
 Lahore,DHA Phase 4,100000,6300,3,3,For Rent
 Lahore,Bahria Town - Sector E,58000,600,1,1,For Rent
@@ -63933,7 +63775,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,F-6,450000,3600,4,4,For Rent
  Islamabad,G-16,160000,2790,5,5,For Rent
  Islamabad,DHA Defence,185000,4500,6,6,For Rent
- Islamabad,F-8,5600000,18000,8,7,For Rent
  Islamabad,Bahria Town,140000,2250,4,5,For Rent
  Islamabad,DHA Defence,85000,4500,3,4,For Rent
  Islamabad,G-15,95000,5400,3,3,For Rent
@@ -66290,7 +66131,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,G-13,100000,900,4,5,For Rent
  Islamabad,E-11,78000,2002,3,4,For Rent
  Islamabad,Bani Gala,85000,2092,4,4,For Rent
- Islamabad,F-6,5500000,24300,10,6,For Rent
  Islamabad,Embassy Road,2000000,14850,6,6,For Rent
  Islamabad,F-8,280000,9000,2,2,For Rent
  Islamabad,G-15,65000,3195,4,4,For Rent
@@ -67429,15 +67269,9 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Abbottabad,PMA Road,42000,1575,3,2,For Rent
  Alipur,Alipur - Muzaffargarh Road,80000,4500,7,5,For Rent
  Alipur,Rajput Colony,15000,450,2,2,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Others,27500,675,4,4,For Rent
  Arifwala,Bahawalnagar Bypass Road,22000,1125,2,3,For Rent
  Arifwala,Burewala Road,20000,3375,6,2,For Rent
- Badin,Agrovil Colony,15,2500,3,4,For Rent
  Bahawalnagar,College Road,18000,2250,2,3,For Rent
  Bahawalnagar,Chishtian Road,28000,1125,4,5,For Rent
  Bahawalnagar,Model Town,12000,1125,3,2,For Rent
@@ -67474,7 +67308,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Daska,Pasrur Road,5000,225,1,1,For Rent
  Daska,Younas Abad,35000,900,4,4,For Rent
  Daska,Circular Road,13000,900,2,1,For Rent
- Depalpur,Others,4000,450,1,1,For Rent
  Dera Ghazi Khan,Khayaban-e-Sarwar,20000,2250,4,3,For Rent
  Dera Ghazi Khan,Shahzad Colony,6000,225,1,1,For Rent
  Dera Ghazi Khan,Shahzad Colony,9000,225,1,1,For Rent
@@ -67933,7 +67766,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Muzaffargarh,Bypass Road,15000,1125,3,3,For Rent
  Muzaffargarh,Others,12000,1867,2,2,For Rent
  Muzaffargarh,DG Khan Road,11000,675,3,2,For Rent
- Muzaffargarh,Others,8500000,7650,5,5,For Rent
  Nankana Sahib,Shad Bagh Colony,12000,1125,2,2,For Rent
  Nankana Sahib,Ghousia Colony,200000,36000,6,4,For Rent
  Naran,Batakundi,30000,675,2,2,For Rent
@@ -68178,12 +68010,7 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Gujrat,Bara Dari,19000,9000,1,1,For Rent
  Muzaffarabad,Others,24000,1125,2,1,For Rent
  Peshawar,GT Road,1500000,45000,2,3,For Rent
- Sialkot,Citi Housing Society,13200000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,11000000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,10800000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,6400000,1125,3,4,For Rent
  Sialkot,Citi Housing Society,4900000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6500000,1125,3,4,For Rent
  Sukkur,Eid Gah Road,70000,450,4,1,For Rent
  Islamabad,DHA Defence,150000,1642,2,2,For Rent
  Islamabad,Gulberg,130000,1800,3,3,For Rent
@@ -68609,11 +68436,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Abbottabad,Narian Road,100000,3600,3,3,For Rent
  Abbottabad,Karakoram Highway,65000,1800,4,4,For Rent
  Alipur,Alipur - Muzaffargarh Road,50000,4500,7,5,For Rent
- Alipur,Rajput Colony,10000000,1125,4,4,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Sahiwal Road,20000,225,2,2,For Rent
  Arifwala,Pakpattan Road,12000,1350,3,2,For Rent
  Astore,Others,50000,1575,5,6,For Rent
@@ -68848,7 +68670,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Gujranwala,Citi Housing Society,65000,742,2,2,For Rent
  Gujrat,Shadman Colony,50000,1350,2,2,For Rent
  Gujrat,GT Road,27000,1125,2,2,For Rent
- Gwadar,GDA Industrial Scheme 3,5434000,4500,2,4,For Rent
  Gwadar,Airport Road,50000,2002,4,4,For Rent
  Hafizabad,Alipur Chatha Road,10000,1575,2,2,For Rent
  Hafizabad,Canal Colony,40000,1125,4,4,For Rent
@@ -68867,7 +68688,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Hassan Abdal,Mohammad Khan Colony,20000,4500,2,1,For Rent
  Hub Chowki,Hub Industrial & Trading Estates,50000,1282,8,6,For Rent
  Hunza,Karakoram Highway,90000,11250,3,3,For Rent
- Gilgit Baltistan,Hunza,567,1277100,4,7,For Rent
  Hyderabad,Hyderabad Bypass,50000,27000,2,2,For Rent
  Hyderabad,Auto Bhan Road,40000,25425,3,2,For Rent
  Hyderabad,Latifabad,28000,21150,3,2,For Rent
@@ -68966,7 +68786,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Layyah,Mohalla Qadirabad,100000,4950,10,10,For Rent
  Layyah,Sugar Mill Road,15000,2250,4,3,For Rent
  Layyah,TDA Colony,15000,675,3,3,For Rent
- Lodhran,National Highway 5,3000,292,1,1,For Rent
  Lower Dir,Gul Abad,30000,2925,5,6,For Rent
  Mandi Bahauddin,Lila Town,35000,2250,4,4,For Rent
  Mandi Bahauddin,Sufi City,55000,1575,4,5,For Rent
@@ -69119,7 +68938,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Naran,Mansehra - Naran - Jalkhad - Chilas Road,270000,2250,2,2,For Rent
  Narowal,Shakarghar Road,60000,4500,2,1,For Rent
  Narowal,Others,25000,1800,4,3,For Rent
- Narowal,Circular Road,4500,225,1,1,For Rent
  Nawabshah,Ghulam Hyder Shah Colony,15000,35100,2,1,For Rent
  Nawabshah,Sakrand Road,20000,200,4,3,For Rent
  Nawabshah,Sakrand Road,30000,280,7,7,For Rent
@@ -69350,12 +69168,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Wazirabad,Sialkot Road,40000,1125,5,4,For Rent
  Wazirabad,Allahabad,14000,1507,3,2,For Rent
  Wazirabad,Others,17000,1575,2,3,For Rent
- Sialkot,Citi Housing Society,12400000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,12500000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,8600000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,8500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,8800000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6800000,1125,3,4,For Rent
  Islamabad,I-8,500000,2002,2,1,For Rent
  Islamabad,F-8,400000,1192,2,2,For Rent
  Islamabad,H-13,270000,1800,11,7,For Rent
@@ -69372,7 +69184,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,PWD Road,160000,2250,1,1,For Rent
  Islamabad,F-11,25000,202,1,1,For Rent
  Islamabad,F-10,300000,1507,2,2,For Rent
- Islamabad,Blue Area,6000000,23850,1,1,For Rent
  Islamabad,F-11,175000,990,2,1,For Rent
  Islamabad,G-9,85000,697,1,1,For Rent
  Islamabad,Gulberg,40000,810,2,2,For Rent
@@ -69382,7 +69193,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,F-7,450000,2002,4,4,For Rent
  Islamabad,I-8,150000,990,2,2,For Rent
  Islamabad,Gulberg,140000,1125,4,1,For Rent
- Islamabad,G-10,12500000,49950,10,6,For Rent
  Islamabad,I-9,60000,450,1,1,For Rent
  Islamabad,D-17,120000,2250,2,4,For Rent
  Islamabad,F-11,400000,2002,3,1,For Rent
@@ -69774,10 +69584,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Ahmedpur East,Others,22000,1125,2,2,For Rent
  Alipur,Others,35000,4500,7,6,For Rent
  Alipur,Others,35000,4500,7,5,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Pakpattan Road,27000,1125,3,3,For Rent
  Arifwala,Others,30000,1125,3,3,For Rent
  Astore,Others,25000,1125,2,2,For Rent
@@ -69910,7 +69716,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Faisalabad,Susan Road,60000,1125,1,1,For Rent
  Faisalabad,Citi Housing,200000,4500,6,6,For Rent
  Fateh Jang,GT Road,17000,1125,3,3,For Rent
- Punjab,Fateh Jang,4000,1125,2,1,For Rent
  Galyat,Khanspur,350000,1575,4,3,For Rent
  Galyat,Ayubia,250000,3960,3,2,For Rent
  Galyat,Changla Gali,1200000,4500,4,4,For Rent
@@ -70031,7 +69836,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Hassan Abdal,Others,35000,4500,3,3,For Rent
  Hub Chowki,Hub Chowki - Beach Road Link,40000,9000,5,4,For Rent
  Hunza,Karimabad,110000,2250,5,4,For Rent
- Gilgit Baltistan,Hunza,77,17100,7,7,For Rent
  Hyderabad,Nasim Nagar Road,31000,27450,3,3,For Rent
  Hyderabad,Hyderabad Bypass,100000,200,5,6,For Rent
  Hyderabad,Qasimabad,70000,237,3,5,For Rent
@@ -70292,7 +70096,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Narowal,College Road,25000,2700,2,3,For Rent
  Narowal,Circular Road,25000,1800,4,3,For Rent
  Narowal,Circular Road,12000,1125,1,1,For Rent
- Narowal,Others,2500,225,1,1,For Rent
  Nasirabad,Others,15000,2790,4,4,For Rent
  Nawabshah,Nawabshah Bridge Road,50000,200,3,3,For Rent
  Nawabshah,Civil Hospital Road,8000,5400,1,1,For Rent
@@ -70534,12 +70337,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Wazirabad,GT Road,16000,1575,4,2,For Rent
  Wazirabad,Sialkot Road,30000,1125,5,4,For Rent
  Wazirabad,Nizamabad,26000,900,5,5,For Rent
- Sialkot,Citi Housing Society,11800000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,11600000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,9200000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,7800000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,6500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,7200000,1125,3,4,For Rent
  Tando Muhammad Khan,Others,20000,460,1,1,For Rent
  Islamabad,Blue Area,500000,1507,4,1,For Rent
  Islamabad,G-15,35000,697,2,2,For Rent
@@ -70557,7 +70354,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,G-8,2280000,7650,11,6,For Rent
  Islamabad,F-11,220000,1147,2,2,For Rent
  Islamabad,Gulberg,800000,4005,2,2,For Rent
- Islamabad,G-8,6000000,19800,3,3,For Rent
  Islamabad,Jinnah Avenue,150000,450,1,1,For Rent
  Islamabad,I-9,3000000,30150,4,6,For Rent
  Islamabad,F-10,85000,450,1,1,For Rent
@@ -70953,11 +70749,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Abbottabad,Kakul,20000,3375,3,4,For Rent
  Ahmedpur East,Others,24000,2250,3,2,For Rent
  Alipur,Others,100000,202,3,2,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
- Punjab,Alipur,2,13500,3,6,For Rent
  Arifwala,Bahawalnagar Bypass Road,7000,450,2,1,For Rent
  Arifwala,Burewala Road,150000,4500,3,2,For Rent
  Arifwala,Bahawalnagar Bypass Road,120000,4500,7,5,For Rent
@@ -71273,7 +71064,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Jhelum,Citi Housing Scheme,26000,450,2,2,For Rent
  Jhelum,Citi Housing Scheme,40000,1125,4,4,For Rent
  Jhelum,Citi Housing Scheme,32000,900,3,3,For Rent
- Kamalia,Others,3500,900,2,1,For Rent
  Kamoki,GT Road,32000,1125,5,3,For Rent
  Kasur,Kot Radha Kishan,17000,1350,3,2,For Rent
  Kasur,Ferozpur Road,65000,2250,5,5,For Rent
@@ -71462,7 +71252,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Muridke,Others,25000,1125,5,4,For Rent
  Muridke,Others,18000,1125,5,4,For Rent
  Muridke,GT Road,50000,2250,6,5,For Rent
- Muridke,Others,2580,27450,8,1,For Rent
  Murree,Murree Improvement Trust Colony,450000,9000,3,3,For Rent
  Murree,Murree Expressway,300000,13500,7,5,For Rent
  Murree,Murree Expressway,35000,900,1,1,For Rent
@@ -71479,8 +71268,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Nankana Sahib,Mangtanwala Road,10000,1350,4,3,For Rent
  Nankana Sahib,Nankana Sahib Bypass,100000,36000,6,4,For Rent
  Naran,Batakundi,300000,6750,2,2,For Rent
- Narowal,College Road,2500,202,1,1,For Rent
- Narowal,Eidgah Road,3000,225,1,1,For Rent
  Narowal,Shakarghar Road,40000,1125,6,6,For Rent
  Narowal,College Road,15000,1350,4,3,For Rent
  Narowal,Circular Road,15000,2025,5,2,For Rent
@@ -71726,13 +71513,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Wazirabad,Sialkot Road,30000,1125,5,4,For Rent
  Wazirabad,Sialkot Road,20000,1125,2,2,For Rent
  Mandi Bahauddin,Phalia Mandi Bahauddin Road,5000000,135000,7,6,For Rent
- Multan,Buch Executive Villas,6500000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,14200000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,10900000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,13400000,2250,3,4,For Rent
- Sialkot,Citi Housing Society,5400000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,5600000,1125,3,4,For Rent
- Sialkot,Citi Housing Society,5500000,1125,3,4,For Rent
  Islamabad,I-9,5000000,27900,4,5,For Rent
  Islamabad,PWD Road,30000,450,2,2,For Rent
  Islamabad,I-9,550000,2497,1,3,For Rent
@@ -71761,7 +71541,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Islamabad,I-10,2100000,13950,1,1,For Rent
  Islamabad,DHA Defence,200000,1710,1,2,For Rent
  Islamabad,G-9,850000,4950,9,3,For Rent
- Islamabad,F-7,7000000,25200,6,6,For Rent
  Islamabad,Top City 1,1500000,11700,11,7,For Rent
  Islamabad,G-7,1000000,4005,11,6,For Rent
  Islamabad,Fateh Jang Road,250000,9000,3,2,For Rent
@@ -71816,11 +71595,9 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,Shahra-e-Faisal,140000,27450,3,2,For Rent
  Karachi,Shahra-e-Faisal,1500000,1200,6,5,For Rent
  Karachi,Shahra-e-Faisal,375000,37575,4,3,For Rent
- Karachi,Bin Qasim Town,7000000,22222,11,6,For Rent
  Karachi,Jamshed Town,2500000,400,2,4,For Rent
  Karachi,Jamshed Town,170000,250,4,4,For Rent
  Karachi,DHA Defence,2600000,1111,10,3,For Rent
- Karachi,Shahra-e-Faisal,6000000,3333,11,6,For Rent
  Karachi,DHA Defence,67000,19350,1,1,For Rent
  Karachi,Gulistan-e-Jauhar,100000,240,4,3,For Rent
  Karachi,DHA Defence,50000,15075,1,2,For Rent
@@ -72155,7 +71932,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Faisalabad,Sargodha Road,900000,12150,3,4,For Rent
  Faisalabad,Susan Road,80000,990,1,1,For Rent
  Faisalabad,Kohinoor City,16000,292,1,1,For Rent
- Faisalabad,Sahianwala,7000000,199800,1,2,For Rent
  Faisalabad,Samundari Road,200000,9000,1,1,For Rent
  Faisalabad,Jaranwala Road,300000,18000,1,1,For Rent
  Faisalabad,Susan Road,130000,1192,1,1,For Rent
@@ -72232,7 +72008,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,200000,500,7,6,For Rent
  Karachi,Clifton,200000,37575,2,1,For Rent
  Karachi,Gulistan-e-Jauhar,190000,12600,1,1,For Rent
- Karachi,Shahra-e-Faisal,6000000,3333,11,7,For Rent
  Karachi,Shahra-e-Faisal,1400000,400,4,4,For Rent
  Karachi,Shahra-e-Faisal,2000000,1111,11,7,For Rent
  Karachi,Korangi,1800000,6111,10,7,For Rent
@@ -72244,7 +72019,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,North Nazimabad,75000,256,4,3,For Rent
  Karachi,North Nazimabad,225000,650,3,2,For Rent
  Karachi,DHA Defence,75000,22500,1,1,For Rent
- Karachi,Shaheed Millat Road,6000000,3333,4,4,For Rent
  Karachi,Gulshan-e-Iqbal Town,120000,240,5,3,For Rent
  Karachi,Shahra-e-Faisal,1850000,917,11,6,For Rent
  Karachi,Shahra-e-Faisal,3000000,1556,8,4,For Rent
@@ -72252,7 +72026,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,DHA Defence,800000,444,5,2,For Rent
  Karachi,DHA Defence,100000,28125,1,1,For Rent
  Karachi,Jamshed Town,750000,600,9,6,For Rent
- Karachi,Shahra-e-Faisal,6000000,6111,11,10,For Rent
  Karachi,Shahra-e-Faisal,60000,20025,1,2,For Rent
  Karachi,Shahra-e-Faisal,150000,29925,1,1,For Rent
  Karachi,Shahra-e-Faisal,2400000,3000,11,10,For Rent
@@ -72415,7 +72188,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Toba Tek Singh,Canal Road,20000,1800,6,2,For Rent
  Wah,Wah Cantt,500000,2700,10,10,For Rent
  Wazirabad,Haji Park,25000,1125,7,2,For Rent
- Islamabad,D-12,13000000,84150,11,7,For Rent
  Islamabad,F-7,350000,1192,3,2,For Rent
  Islamabad,Blue Area,450000,1710,4,2,For Rent
  Islamabad,G-6,924000,2790,2,1,For Rent
@@ -72442,7 +72214,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,150000,400,6,4,For Rent
  Karachi,Gulshan-e-Iqbal Town,350000,400,6,7,For Rent
  Karachi,Gulshan-e-Iqbal Town,200000,400,3,3,For Rent
- Karachi,Jamshed Town,6000000,3333,11,7,For Rent
  Karachi,Shahra-e-Faisal,300000,600,5,3,For Rent
  Karachi,DHA Defence,65000,14175,1,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,135000,300,3,3,For Rent
@@ -72451,7 +72222,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,Shahra-e-Faisal,145000,40050,3,2,For Rent
  Karachi,DHA Defence,65000,20025,1,1,For Rent
  Karachi,Bin Qasim Town,3600000,13333,11,7,For Rent
- Karachi,Korangi,7500000,4000,11,6,For Rent
  Karachi,Gulshan-e-Iqbal Town,450000,1000,9,6,For Rent
  Karachi,Gulshan-e-Iqbal Town,600000,26325,4,4,For Rent
  Karachi,Jamshed Town,500000,500,4,4,For Rent
@@ -72459,7 +72229,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Karachi,Jamshed Town,100000,22500,4,2,For Rent
  Karachi,Shahra-e-Faisal,165000,42525,2,2,For Rent
  Karachi,Bin Qasim Town,2100000,6667,11,6,For Rent
- Karachi,Bin Qasim Town,7500000,33333,11,6,For Rent
  Karachi,DHA Defence,350000,22500,4,4,For Rent
  Karachi,DHA Defence,65000,22500,2,1,For Rent
  Karachi,Gulshan-e-Iqbal Town,160000,27000,4,4,For Rent
@@ -72632,7 +72401,6 @@ Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
  Wah,New City,23000,247,1,1,For Rent
  Wah,Wah Cantt,90000,900,1,1,For Rent
  Wazirabad,Bharoke Cheema Road,200000,2250,1,2,For Rent
-Karachi,North Nazimabad Block B,11500000,1100,2,2,For Rent
 Lahore,DHA Town Phase 9,100000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,50000,520,1,1,For Rent
 Lahore,Johar Town,70000,2700,2,2,For Rent
@@ -73445,7 +73213,6 @@ Lahore,Fazlia Colony,42000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,46000,1125,2,2,For Rent
 Lahore,DHA Phase 5,360000,4500,5,6,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector F,62000,509,1,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
@@ -73604,7 +73371,6 @@ Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,DHA Phase 5,85000,4500,2,2,For Rent
 Lahore,DHA Phase 5,150000,2250,4,4,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Johar Town,28000,335,1,1,For Rent
 Lahore,DHA Phase 5,70000,2250,2,2,For Rent
 Lahore,DHA Phase 6,85000,2250,2,2,For Rent
@@ -74759,7 +74525,6 @@ Lahore,Bahria Town - Sector B,53000,500,1,1,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Punjab Small,70000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,55000,495,1,1,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector C,52000,495,1,1,For Rent
 Lahore,Bahria Town - Sector C,64000,506,1,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -74893,7 +74658,6 @@ Lahore,DHA Phase 7,92000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Pakistan Millitary Accounts,35000,1125,2,3,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,Johar Town Phase 2 - Block R1,45000,1125,1,2,For Rent
 Lahore,Sher Ali Road,25000,675,2,2,For Rent
 Lahore,DHA Phase 7,85000,2250,2,3,For Rent
@@ -74951,7 +74715,6 @@ Lahore,Fazlia Colony,45000,1125,2,2,For Rent
 Lahore,Bahria Town - Sector C,66000,500,1,1,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Gulberg 3,270000,2700,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Wapda Town Phase 1,130000,2250,5,6,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -76107,7 +75870,6 @@ Lahore,Bahria Town - Sector C,54000,507,1,1,For Rent
 Lahore,Faisal Town,45000,2250,2,2,For Rent
 Lahore,DHA Phase 7,138000,4500,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),45000,1125,2,2,For Rent
-Lahore,Rehmanpura Colony,6500000,787,3,4,For Rent
 Lahore,DHA Phase 4,640000,1200,2,2,For Rent
 Lahore,Alfalah Town,35000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -76163,7 +75925,6 @@ Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Johar Town Phase 2 - Block J3,50000,1237,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,PIA Housing Scheme,35000,787,1,1,For Rent
@@ -76290,7 +76051,6 @@ Lahore,DHA Phase 8,95000,2250,2,2,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,105000,2250,2,2,For Rent
 Lahore,DHA Phase 8,107000,2250,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,88000,2250,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -76308,7 +76068,6 @@ Lahore,Shadman,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,45000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -76570,7 +76329,6 @@ Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
@@ -77595,7 +77353,6 @@ Lahore,DHA Phase 8,96000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,DHA Phase 8 - Ex Park View,150000,2250,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,DHA Phase 7,93000,2250,2,3,For Rent
 Lahore,DHA Phase 8,95000,2250,2,3,For Rent
@@ -77612,8 +77369,6 @@ Lahore,DHA Phase 7,87000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,DHA Phase 6,90000,1125,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,77000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
@@ -77939,7 +77694,6 @@ Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Gulberg,280000,3375,3,4,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),43000,1125,2,2,For Rent
 Lahore,Muslim Town,82000,2250,2,2,For Rent
@@ -78550,7 +78304,6 @@ Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Al Ameen Society,50000,2250,2,2,For Rent
 Lahore,Gulberg,245000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector D,6800000,550,1,1,For Rent
 Lahore,Punjab Small,45000,1575,2,2,For Rent
 Lahore,Gulberg,200000,2250,3,3,For Rent
 Lahore,Alfalah Town,50000,900,3,3,For Rent
@@ -79075,7 +78828,6 @@ Lahore,Johar Town,73000,1125,5,5,For Rent
 Lahore,Johar Town,85000,1125,5,5,For Rent
 Lahore,Johar Town,145000,2250,5,5,For Rent
 Lahore,Johar Town,65000,2250,2,2,For Rent
-Lahore,Johar Town,22000000,4500,5,5,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,82000,2250,2,2,For Rent
 Lahore,Model Town Extension,85000,2250,2,2,For Rent
@@ -79207,7 +78959,6 @@ Lahore,DHA Phase 4,590000,1200,2,2,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,Cavalry Ground,80000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector D,35000,1125,2,2,For Rent
-Lahore,DHA Phase 4,49000000,1575,2,2,For Rent
 Lahore,DHA Phase 4,170000,900,2,2,For Rent
 Lahore,DHA Phase 4,195000,600,1,1,For Rent
 Lahore,DHA Phase 7,250000,4500,4,4,For Rent
@@ -79252,7 +79003,6 @@ Lahore,Bahria Town - Sector E,70000,630,1,1,For Rent
 Lahore,Bahria Town - Sector E,45000,570,1,1,For Rent
 Lahore,Bahria Town - Sector E,65000,670,1,1,For Rent
 Lahore,Awan Town,60000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,14000000,675,1,1,For Rent
 Lahore,DHA Phase 6,160000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,580,1,1,For Rent
 Lahore,Model Town Link Road,40000,1125,2,2,For Rent
@@ -79302,7 +79052,6 @@ Lahore,Wapda Town,40000,1125,2,2,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Wapda Town,70000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,50000,450,1,1,For Rent
-Lahore,Bahria Town - Sector D,3500,1125,2,2,For Rent
 Lahore,Model Town,39000,1125,2,2,For Rent
 Lahore,Faisal Town,55000,2250,2,2,For Rent
 Lahore,Bahria Town - Sector E,55000,500,1,1,For Rent
@@ -79334,7 +79083,6 @@ Lahore,Model Town Extension,79000,2250,2,3,For Rent
 Lahore,Model Town Extension,70000,2250,2,3,For Rent
 Lahore,Model Town Extension,67000,2250,2,3,For Rent
 Lahore,Bao Wala Barki Road,30000,675,4,3,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Model Town Extension,78000,2250,2,3,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,620000,1200,2,2,For Rent
@@ -79496,7 +79244,6 @@ Rawalpindi,Bahria Town Phase 8,170000,1125,3,3,For Rent
 Rawalpindi,Adyala Road,28000,1125,2,3,For Rent
 Rawalpindi,Jamia Masjid Road,15000,2272,1,1,For Rent
 Rawalpindi,Airport Housing Society Rawalpindi,50000,1125,4,4,For Rent
-Rawalpindi,Clifton Township,30,1125,2,2,For Rent
 Rawalpindi,Askari 14,130000,2250,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,75000,1575,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,85000,1575,5,5,For Rent
@@ -80276,7 +80023,6 @@ Lahore,Bahria Town - Sector C,67000,520,1,1,For Rent
 Lahore,Punjab Board Of Revenue (BOR),26000,787,1,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Model Town Extension,82000,2250,2,2,For Rent
-Lahore,Lahore Cantt,70,1125,3,4,For Rent
 Lahore,Lahore Cantt,300000,4500,5,6,For Rent
 Lahore,Punjab Board Of Revenue (BOR),82000,2250,2,2,For Rent
 Lahore,Faisal Town,82000,2250,2,2,For Rent
@@ -80687,7 +80433,6 @@ Lahore,Shadman 1,40000,1125,2,2,For Rent
 Lahore,Johar Town,130000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,500,1,1,For Rent
 Lahore,Nasheman E Iqbal Housing Society,80000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,8300000,709,1,1,For Rent
 Lahore,Bahria Town - Sector E,62000,500,1,1,For Rent
 Lahore,Shadman,36000,1125,2,2,For Rent
 Lahore,Gulberg 1,215000,2250,4,4,For Rent
@@ -80805,7 +80550,6 @@ Lahore,Askari 11,85000,2250,3,3,For Rent
 Lahore,DHA Phase 8 - Ex Park View,135000,2250,4,5,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,140000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector C,12000000,580,1,1,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -80865,7 +80609,6 @@ Lahore,Gulberg 3,210000,2700,3,3,For Rent
 Lahore,Gulberg 3,135000,2250,2,2,For Rent
 Lahore,Gulberg 3,375000,4500,4,4,For Rent
 Lahore,Gulberg 3,215000,2700,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Model Town Extension,75000,2250,2,3,For Rent
 Lahore,Model Town Extension,74000,2250,2,3,For Rent
 Lahore,Model Town Link Road,82000,2250,2,3,For Rent
@@ -81182,7 +80925,6 @@ Lahore,Rehmanpura Colony,110000,787,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,72000,1125,3,4,For Rent
 Lahore,Gulberg 3,265000,2700,3,4,For Rent
 Lahore,Rehmanpura Colony,42000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector E,7600000,528,1,1,For Rent
 Lahore,Bahria Town - Sector E,60000,528,1,1,For Rent
 Lahore,DHA Phase 4,140000,2250,3,3,For Rent
 Lahore,DHA Phase 2,375000,9000,6,6,For Rent
@@ -81384,7 +81126,6 @@ Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Bahria Town - Sector C,67000,450,1,1,For Rent
 Lahore,DHA Phase 4,95000,4500,2,2,For Rent
 Lahore,Rehmanpura Colony,37000,1125,2,2,For Rent
-Lahore,Allama Iqbal Town - Neelum Block,3300,1125,2,1,For Rent
 Lahore,DHA Phase 3,515000,9000,7,8,For Rent
 Lahore,Bahria Town - Sector C,238000,2250,4,5,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -82338,7 +82079,6 @@ Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,39000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector C,13000000,540,1,1,For Rent
 Lahore,Faisal Town,37000,1125,2,2,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -82372,7 +82112,6 @@ Lahore,Muslim Town,70000,1125,3,4,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,55000,350,1,1,For Rent
 Lahore,Bahria Town - Sector D,65000,500,1,1,For Rent
-Lahore,DHA Phase 6,120000000,4500,5,6,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,630000,1200,2,2,For Rent
 Lahore,DHA Phase 4,590000,1200,2,2,For Rent
@@ -82625,7 +82364,6 @@ Multan,DHA Villas,130000,2700,5,6,For Rent
 Multan,Shadab Colony,30000,900,2,2,For Rent
 Multan,Northern Bypass,85000,2250,4,4,For Rent
 Multan,Bahadurpur,22000,900,2,1,For Rent
-Multan,Askari Colony Ph3,15000000,4500,4,5,For Rent
 Multan,Shah Rukn-E-Alam Colony,27000,1125,2,2,For Rent
 Multan,Northern Bypass,40000,1575,2,2,For Rent
 Multan,DHA,150000,4500,5,6,For Rent
@@ -83855,7 +83593,6 @@ Lahore,Askari 11,90000,2250,3,3,For Rent
 Lahore,DHA Phase 8 Ex AA (Air Avenue),140000,2250,4,5,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector E,12200000,570,1,1,For Rent
 Lahore,Gulberg 3,180000,2700,2,3,For Rent
 Lahore,DHA Phase 4,100000,6300,3,3,For Rent
 Lahore,Bahria Town - Sector E,58000,600,1,1,For Rent
@@ -84223,7 +83960,6 @@ Lahore,DHA Phase 4,75000,900,2,1,For Rent
 Lahore,Gulberg 3,250000,850,2,2,For Rent
 Lahore,Gulberg,100000,2000,2,2,For Rent
 Lahore,Gulberg Lhr 460 Sq. Ft. Office For Rent,40000,460,1,1,For Rent
-Karachi,North Nazimabad Block B,11500000,1100,2,2,For Rent
 Lahore,DHA Town Phase 9,100000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,50000,520,1,1,For Rent
 Lahore,Johar Town,70000,2700,2,2,For Rent
@@ -85036,7 +84772,6 @@ Lahore,Fazlia Colony,42000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,46000,1125,2,2,For Rent
 Lahore,DHA Phase 5,360000,4500,5,6,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector F,62000,509,1,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
@@ -85195,7 +84930,6 @@ Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,DHA Phase 5,85000,4500,2,2,For Rent
 Lahore,DHA Phase 5,150000,2250,4,4,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Johar Town,28000,335,1,1,For Rent
 Lahore,DHA Phase 5,70000,2250,2,2,For Rent
 Lahore,DHA Phase 6,85000,2250,2,2,For Rent
@@ -86350,7 +86084,6 @@ Lahore,Bahria Town - Sector B,53000,500,1,1,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Punjab Small,70000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector C,55000,495,1,1,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Bahria Town - Sector C,52000,495,1,1,For Rent
 Lahore,Bahria Town - Sector C,64000,506,1,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -86484,7 +86217,6 @@ Lahore,DHA Phase 7,92000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Pakistan Millitary Accounts,35000,1125,2,3,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,Johar Town Phase 2 - Block R1,45000,1125,1,2,For Rent
 Lahore,Sher Ali Road,25000,675,2,2,For Rent
 Lahore,DHA Phase 7,85000,2250,2,3,For Rent
@@ -86542,7 +86274,6 @@ Lahore,Fazlia Colony,45000,1125,2,2,For Rent
 Lahore,Bahria Town - Sector C,66000,500,1,1,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Gulberg 3,270000,2700,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Wapda Town Phase 1,130000,2250,5,6,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -87698,7 +87429,6 @@ Lahore,Bahria Town - Sector C,54000,507,1,1,For Rent
 Lahore,Faisal Town,45000,2250,2,2,For Rent
 Lahore,DHA Phase 7,138000,4500,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),45000,1125,2,2,For Rent
-Lahore,Rehmanpura Colony,6500000,787,3,4,For Rent
 Lahore,DHA Phase 4,640000,1200,2,2,For Rent
 Lahore,Alfalah Town,35000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -87754,7 +87484,6 @@ Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Rehmanpura Colony,48000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
 Lahore,Johar Town Phase 2 - Block J3,50000,1237,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Rehmanpura Colony,47000,1125,2,2,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,PIA Housing Scheme,35000,787,1,1,For Rent
@@ -87881,7 +87610,6 @@ Lahore,DHA Phase 8,95000,2250,2,2,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,105000,2250,2,2,For Rent
 Lahore,DHA Phase 8,107000,2250,2,2,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,DHA Phase 8,110000,2250,2,2,For Rent
 Lahore,DHA Phase 8,88000,2250,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
@@ -87899,7 +87627,6 @@ Lahore,Shadman,48000,1125,2,2,For Rent
 Lahore,Rehmanpura Colony,45000,1125,2,2,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
 Lahore,Gulberg 3,380000,4500,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
@@ -88161,7 +87888,6 @@ Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,50000,1125,2,2,For Rent
 Lahore,Askari 11,75000,2250,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
@@ -89186,7 +88912,6 @@ Lahore,DHA Phase 8,96000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,DHA Phase 8 - Ex Park View,150000,2250,4,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,70000,1125,3,4,For Rent
 Lahore,DHA Phase 7,93000,2250,2,3,For Rent
 Lahore,DHA Phase 8,95000,2250,2,3,For Rent
@@ -89203,8 +88928,6 @@ Lahore,DHA Phase 7,87000,2250,2,3,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,33000,1125,2,1,For Rent
 Lahore,DHA Phase 6,90000,1125,3,4,For Rent
-Lahore,DHA Phase 5,72500000,2250,4,4,For Rent
-Lahore,DHA Phase 6,16000000,2250,4,4,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,77000,1125,2,1,For Rent
 Lahore,DHA Phase 6,75000,2250,2,2,For Rent
@@ -89530,7 +89253,6 @@ Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Gulberg,280000,3375,3,4,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Askari 11,100000,2250,3,3,For Rent
 Lahore,Punjab Board Of Revenue (BOR),43000,1125,2,2,For Rent
 Lahore,Muslim Town,82000,2250,2,2,For Rent
@@ -90141,7 +89863,6 @@ Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,30000,1125,2,1,For Rent
 Lahore,Al Ameen Society,50000,2250,2,2,For Rent
 Lahore,Gulberg,245000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector D,6800000,550,1,1,For Rent
 Lahore,Punjab Small,45000,1575,2,2,For Rent
 Lahore,Gulberg,200000,2250,3,3,For Rent
 Lahore,Alfalah Town,50000,900,3,3,For Rent
@@ -90666,7 +90387,6 @@ Lahore,Johar Town,73000,1125,5,5,For Rent
 Lahore,Johar Town,85000,1125,5,5,For Rent
 Lahore,Johar Town,145000,2250,5,5,For Rent
 Lahore,Johar Town,65000,2250,2,2,For Rent
-Lahore,Johar Town,22000000,4500,5,5,For Rent
 Lahore,Ichra,42000,1125,2,2,For Rent
 Lahore,Ichra,82000,2250,2,2,For Rent
 Lahore,Model Town Extension,85000,2250,2,2,For Rent
@@ -90798,7 +90518,6 @@ Lahore,DHA Phase 4,590000,1200,2,2,For Rent
 Lahore,DHA Phase 4,600000,1200,2,2,For Rent
 Lahore,Cavalry Ground,80000,1125,3,4,For Rent
 Lahore,Bahria Town - Sector D,35000,1125,2,2,For Rent
-Lahore,DHA Phase 4,49000000,1575,2,2,For Rent
 Lahore,DHA Phase 4,170000,900,2,2,For Rent
 Lahore,DHA Phase 4,195000,600,1,1,For Rent
 Lahore,DHA Phase 7,250000,4500,4,4,For Rent
@@ -90843,7 +90562,6 @@ Lahore,Bahria Town - Sector E,70000,630,1,1,For Rent
 Lahore,Bahria Town - Sector E,45000,570,1,1,For Rent
 Lahore,Bahria Town - Sector E,65000,670,1,1,For Rent
 Lahore,Awan Town,60000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,14000000,675,1,1,For Rent
 Lahore,DHA Phase 6,160000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,580,1,1,For Rent
 Lahore,Model Town Link Road,40000,1125,2,2,For Rent
@@ -90893,7 +90611,6 @@ Lahore,Wapda Town,40000,1125,2,2,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Wapda Town,70000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,50000,450,1,1,For Rent
-Lahore,Bahria Town - Sector D,3500,1125,2,2,For Rent
 Lahore,Model Town,39000,1125,2,2,For Rent
 Lahore,Faisal Town,55000,2250,2,2,For Rent
 Lahore,Bahria Town - Sector E,55000,500,1,1,For Rent
@@ -90925,7 +90642,6 @@ Lahore,Model Town Extension,79000,2250,2,3,For Rent
 Lahore,Model Town Extension,70000,2250,2,3,For Rent
 Lahore,Model Town Extension,67000,2250,2,3,For Rent
 Lahore,Bao Wala Barki Road,30000,675,4,3,For Rent
-Lahore,Ichra,28500000,1125,3,4,For Rent
 Lahore,Model Town Extension,78000,2250,2,3,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,620000,1200,2,2,For Rent
@@ -91087,7 +90803,6 @@ Rawalpindi,Bahria Town Phase 8,170000,1125,3,3,For Rent
 Rawalpindi,Adyala Road,28000,1125,2,3,For Rent
 Rawalpindi,Jamia Masjid Road,15000,2272,1,1,For Rent
 Rawalpindi,Airport Housing Society Rawalpindi,50000,1125,4,4,For Rent
-Rawalpindi,Clifton Township,30,1125,2,2,For Rent
 Rawalpindi,Askari 14,130000,2250,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,75000,1575,4,4,For Rent
 Rawalpindi,Bahria Town Phase 8,85000,1575,5,5,For Rent
@@ -91867,7 +91582,6 @@ Lahore,Bahria Town - Sector C,67000,520,1,1,For Rent
 Lahore,Punjab Board Of Revenue (BOR),26000,787,1,2,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Model Town Extension,82000,2250,2,2,For Rent
-Lahore,Lahore Cantt,70,1125,3,4,For Rent
 Lahore,Lahore Cantt,300000,4500,5,6,For Rent
 Lahore,Punjab Board Of Revenue (BOR),82000,2250,2,2,For Rent
 Lahore,Faisal Town,82000,2250,2,2,For Rent
@@ -92278,7 +91992,6 @@ Lahore,Shadman 1,40000,1125,2,2,For Rent
 Lahore,Johar Town,130000,4500,3,4,For Rent
 Lahore,Bahria Town - Sector E,60000,500,1,1,For Rent
 Lahore,Nasheman E Iqbal Housing Society,80000,4500,3,3,For Rent
-Lahore,Bahria Town - Sector E,8300000,709,1,1,For Rent
 Lahore,Bahria Town - Sector E,62000,500,1,1,For Rent
 Lahore,Shadman,36000,1125,2,2,For Rent
 Lahore,Gulberg 1,215000,2250,4,4,For Rent
@@ -92396,7 +92109,6 @@ Lahore,Askari 11,85000,2250,3,3,For Rent
 Lahore,DHA Phase 8 - Ex Park View,135000,2250,4,5,For Rent
 Lahore,Askari 11,120000,2250,3,3,For Rent
 Lahore,Askari 11,140000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector C,12000000,580,1,1,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,38000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -92456,7 +92168,6 @@ Lahore,Gulberg 3,210000,2700,3,3,For Rent
 Lahore,Gulberg 3,135000,2250,2,2,For Rent
 Lahore,Gulberg 3,375000,4500,4,4,For Rent
 Lahore,Gulberg 3,215000,2700,3,3,For Rent
-Lahore,Ichra,27500000,1125,3,4,For Rent
 Lahore,Model Town Extension,75000,2250,2,3,For Rent
 Lahore,Model Town Extension,74000,2250,2,3,For Rent
 Lahore,Model Town Link Road,82000,2250,2,3,For Rent
@@ -92773,7 +92484,6 @@ Lahore,Rehmanpura Colony,110000,787,4,4,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,72000,1125,3,4,For Rent
 Lahore,Gulberg 3,265000,2700,3,4,For Rent
 Lahore,Rehmanpura Colony,42000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector E,7600000,528,1,1,For Rent
 Lahore,Bahria Town - Sector E,60000,528,1,1,For Rent
 Lahore,DHA Phase 4,140000,2250,3,3,For Rent
 Lahore,DHA Phase 2,375000,9000,6,6,For Rent
@@ -92975,7 +92685,6 @@ Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
 Lahore,Bahria Town - Sector C,67000,450,1,1,For Rent
 Lahore,DHA Phase 4,95000,4500,2,2,For Rent
 Lahore,Rehmanpura Colony,37000,1125,2,2,For Rent
-Lahore,Allama Iqbal Town - Neelum Block,3300,1125,2,1,For Rent
 Lahore,DHA Phase 3,515000,9000,7,8,For Rent
 Lahore,Bahria Town - Sector C,238000,2250,4,5,For Rent
 Lahore,Allama Iqbal Town - Neelum Block,32000,1125,2,1,For Rent
@@ -93929,7 +93638,6 @@ Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Askari 11,110000,2250,3,3,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,39000,1125,2,2,For Rent
-Lahore,Bahria Town - Sector C,13000000,540,1,1,For Rent
 Lahore,Faisal Town,37000,1125,2,2,For Rent
 Lahore,Faisal Town,36000,1125,2,2,For Rent
 Lahore,Faisal Town,42000,1125,2,2,For Rent
@@ -93963,7 +93671,6 @@ Lahore,Muslim Town,70000,1125,3,4,For Rent
 Lahore,Wapda Town,75000,1125,5,5,For Rent
 Lahore,Bahria Town - Sector E,55000,350,1,1,For Rent
 Lahore,Bahria Town - Sector D,65000,500,1,1,For Rent
-Lahore,DHA Phase 6,120000000,4500,5,6,For Rent
 Lahore,DHA Phase 4,610000,1200,2,2,For Rent
 Lahore,DHA Phase 4,630000,1200,2,2,For Rent
 Lahore,DHA Phase 4,590000,1200,2,2,For Rent
@@ -94216,7 +93923,6 @@ Multan,DHA Villas,130000,2700,5,6,For Rent
 Multan,Shadab Colony,30000,900,2,2,For Rent
 Multan,Northern Bypass,85000,2250,4,4,For Rent
 Multan,Bahadurpur,22000,900,2,1,For Rent
-Multan,Askari Colony Ph3,15000000,4500,4,5,For Rent
 Multan,Shah Rukn-E-Alam Colony,27000,1125,2,2,For Rent
 Multan,Northern Bypass,40000,1575,2,2,For Rent
 Multan,DHA,150000,4500,5,6,For Rent
@@ -95446,7 +95152,6 @@ Lahore,Askari 11,90000,2250,3,3,For Rent
 Lahore,DHA Phase 8 Ex AA (Air Avenue),140000,2250,4,5,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
 Lahore,Askari 11,95000,2250,3,3,For Rent
-Lahore,Bahria Town - Sector E,12200000,570,1,1,For Rent
 Lahore,Gulberg 3,180000,2700,2,3,For Rent
 Lahore,DHA Phase 4,100000,6300,3,3,For Rent
 Lahore,Bahria Town - Sector E,58000,600,1,1,For Rent
@@ -101492,7 +101197,6 @@ Islamabad,F-7,2800000,9000,3,6,Rent
 Islamabad,F-7,700000,4500,6,6,Rent
 Islamabad,F-7,600000,5400,6,6,Rent
 Islamabad,F-7,250000,4500,2,2,Rent
-Islamabad,F-7,5500000,18000,10,6,Rent
 Islamabad,F-7,3000000,9000,3,3,Rent
 Islamabad,F-7,700000,4500,5,6,Rent
 Islamabad,F-7,780000,4500,5,6,Rent
@@ -108180,7 +107884,6 @@ Karachi,DHA Defence,85000,42525,3,4,Rent
 Karachi,DHA Defence,500000,1000,5,4,Rent
 Karachi,DHA Defence,450000,1000,4,3,Rent
 Karachi,DHA Defence,350000,500,5,6,Rent
-Karachi,DHA Defence,6000000,2000,6,4,Rent
 Karachi,DHA Defence,200000,500,4,5,Rent
 Karachi,DHA Defence,140000,22500,4,6,Rent
 Karachi,DHA Defence,225000,500,3,3,Rent
@@ -109828,7 +109531,6 @@ Karachi,Gulistan-e-Jauhar (Fatima Golf Residency),145000,43650,3,6,Rent
 Karachi,Gulistan-e-Jauhar (Fatima Golf Residency),52000,43650,3,3,Rent
 Karachi,Gulshan-e-Areesha,25000,27000,3,4,Rent
 Karachi,Gulshan-e-Azeem,28000,27000,2,3,Rent
-Karachi,Gulshan-e-Azeem,9000000,27000,2,2,Rent
 Karachi,Gulshan-e-Iqbal,50000,220,2,3,Rent
 Karachi,Gulshan-e-Iqbal,50000,36000,2,2,Rent
 Karachi,Gulshan-e-Iqbal Town,95000,200,3,4,Rent
@@ -119856,7 +119558,6 @@ Lahore,Green City,110000,2250,4,5,Rent
 Lahore,Green City,110000,2250,4,5,Rent
 Lahore,Green City,60000,1237,3,4,Rent
 Lahore,Green City,120000,2250,4,5,Rent
-Lahore,Green City,2500,225,1,1,Rent
 Lahore,Green City,12000,225,1,1,Rent
 Lahore,Green City,18000,225,2,3,Rent
 Lahore,Green City,175000,4500,5,6,Rent
@@ -122931,23 +122632,6 @@ Lahore,Shah Jamal,120000,4500,4,4,Rent
 Lahore,Shah Khawar Town,65000,1350,3,4,Rent
 Lahore,Shah Khawar Town,65000,1350,3,4,Rent
 Lahore,Shaheen Colony,30000,1125,3,2,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,5400,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,562,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
-Lahore,Shahtaj Colony,17000000,1125,3,3,Rent
 Lahore,Shalimar Link Road,45000,1800,3,3,Rent
 Lahore,Shalimar Link Road,30000,1350,2,1,Rent
 Lahore,Shalimar Link Road,65000,1125,5,5,Rent
