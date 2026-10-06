@@ -25,7 +25,8 @@ const BikeInputs: React.FC<BikeInputsProps> = ({ formData, handleChange, options
                 { label: "Model", field: "Model", type: "combo", opts: models, req: true, disabled: !formData.Make },
                 { label: "Year", field: "Year", type: "number", req: true, hidden: minimal },
                 { label: "Mileage (km)", field: "Mileage", type: "number", req: false, hidden: minimal },
-                { label: "Registered", field: "City", type: "combo", opts: cities, req: true }
+                { label: "Registered", field: "City", type: "combo", opts: cities, req: true },
+                { label: "Engine (cc)", field: "EngineCapacity", type: "combo", opts: (raw.engine_capacity || ['70', '100', '125', '150']).map((c: string) => c.includes('cc') ? c : `${c} cc`), req: false, hidden: minimal }
             ].filter(i => !i.hidden).map((input) => (
                 <motion.div variants={itemVariants} key={input.field} className="space-y-1">
                     {renderInputLabel(input.label, input.req)}
@@ -49,21 +50,6 @@ const BikeInputs: React.FC<BikeInputsProps> = ({ formData, handleChange, options
                     </div>
                 </motion.div>
             ))}
-            {!minimal && (
-                <motion.div variants={itemVariants} className="space-y-1">
-                    {renderInputLabel("Engine (cc)", false)}
-                    <Select value={formData.EngineCapacity} onValueChange={v => handleChange('EngineCapacity', v)}>
-                        <SelectTrigger className={selectTriggerClasses}><SelectValue placeholder="Select CC" /></SelectTrigger>
-                        <SelectContent className={selectContentClasses}>
-                            {(raw.engine_capacity || ['70 cc', '100 cc', '125 cc', '150 cc']).map((c: string) => (
-                                <SelectItem key={c} value={c.includes('cc') ? c : `${c} cc`} className="focus:bg-[#044e22] focus:text-white text-[#044e22] cursor-pointer">
-                                    {c.includes('cc') ? c : `${c} cc`}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
-                </motion.div>
-            )}
         </motion.div>
     );
 };

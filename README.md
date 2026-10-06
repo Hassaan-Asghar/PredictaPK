@@ -1,15 +1,25 @@
 
 # PredictaPK | AI Powered Price Valuation System
 
-PredictaPK is a sophisticated full-stack AI application designed to provide accurate market value predictions for **Cars**, **Bikes**, **Houses (Buy/Rent)** in Pakistan. By leveraging advanced machine learning models (XGBoost/RandomForest) and **Explainable AI (SHAP)**, it not only predicts prices but also explains *why*, offering transparency to users.
+PredictaPK is a sophisticated full-stack AI application designed to provide accurate market value predictions for **Cars**, **Bikes**, **Houses (Buy/Rent)** in Pakistan. By leveraging advanced machine learning models (RandomForest) and **Explainable AI (SHAP)**, it not only predicts prices but also explains *why*, offering transparency to users.
 
 ![Project Status](https://img.shields.io/badge/Status-Active-success)
 ![Next.js](https://img.shields.io/badge/Next.js-16.1-black)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC)
 
+<<<<<<< Updated upstream
 
 ## View Live Demo: [PredictaPK](https://predictapk.vercel.app/)
+=======
+## Accuracy & Evaluation
+PredictaPK uses **Log-Transformed Random Forest Regressors** trained on rigorously polished datasets to accurately predict across massive price ranges (e.g., 1 Lakh to 1 Crore) without losing detail.
+
+*   **Car Prediction:** 92.10% Accuracy ($R^2$), MAE: ~395k PKR
+*   **House Buy Prediction:** 90.24% Accuracy ($R^2$), MAE: ~5.85M PKR
+*   **House Rent Prediction:** 86.65% Accuracy ($R^2$), MAE: ~27.6k PKR
+*   **Bike Prediction:** 91.79% Accuracy ($R^2$), MAE: ~32.1k PKR
+>>>>>>> Stashed changes
 
 ## Features
 
@@ -38,7 +48,7 @@ PredictaPK is a sophisticated full-stack AI application designed to provide accu
 ### **Backend**
 *   **Framework**: FastAPI (Python)
 *   **Server**: Uvicorn
-*   **ML Libraries**: Scikit-Learn, Pandas, NumPy, XGBoost
+*   **ML Libraries**: Scikit-Learn, Pandas, NumPy, RandomForest
 *   **Explainability**: SHAP (Shapley Additive Explanations)
 *   **Data Processing**: Joblib (Model serialization)
 

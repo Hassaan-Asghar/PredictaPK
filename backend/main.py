@@ -3,7 +3,12 @@ import joblib
 import json
 import os
 import re
-import shap
+try:
+    import shap
+    SHAP_AVAILABLE = True
+except ImportError:
+    SHAP_AVAILABLE = False
+    print("WARNING: SHAP module not found, XAI features disabled.")
 import numpy as np
 import scipy.sparse
 import time
@@ -62,13 +67,16 @@ def load_artifacts():
         else:
             print(f" -> WARNING: Dataset {filename} not found")
     def warmup_explainers():
+        if not SHAP_AVAILABLE:
+            return
         print("Starting background SHAP explainer warmup...")
         for name, model in models.items():
             try:
                 if hasattr(model, 'named_steps') and 'regressor' in model.named_steps:
                     regressor = model.named_steps['regressor']
+                    actual_rf = regressor.regressor_ if hasattr(regressor, 'regressor_') else regressor
                     print(f"Initializing Explainer for {name}...")
-                    explainers[name] = shap.TreeExplainer(regressor)
+                    explainers[name] = shap.TreeExplainer(actual_rf)
             except Exception as e:
                 print(f"Failed to warmup explainer for {name}: {e}")
         print("SHAP warmup complete.")
@@ -115,12 +123,15 @@ def get_price_trends(model, base_df, service_name):
         print(f"Trend calculation failed: {e}")
         return []
 def get_shap_explanation(model_pipeline, input_df, service_name=None):
-    """
-    Calculates SHAP values safely with caching and sparse matrix support.
-    """
+    if not SHAP_AVAILABLE:
+        return []
     try:
         preprocessor = model_pipeline.named_steps['preprocessor']
         regressor = model_pipeline.named_steps['regressor']
+        if hasattr(regressor, 'regressor_'):
+            actual_rf = regressor.regressor_
+        else:
+            actual_rf = regressor
         X_transformed = preprocessor.transform(input_df)
         if scipy.sparse.issparse(X_transformed):
             X_transformed = X_transformed.toarray()
@@ -129,7 +140,7 @@ def get_shap_explanation(model_pipeline, input_df, service_name=None):
             explainer = explainers[service_name]
         else:
             print(f"Initializing SHAP Explainer dynamically for {service_name}...")
-            explainer = shap.TreeExplainer(regressor)
+            explainer = shap.TreeExplainer(actual_rf)
             if service_name:
                 explainers[service_name] = explainer
         t0 = time.time()

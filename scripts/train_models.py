@@ -6,12 +6,13 @@ import time
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
+from sklearn.compose import ColumnTransformer, TransformedTargetRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
+import numpy as np
 CURRENT_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(CURRENT_SCRIPT_DIR)
-DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+DATA_DIR = os.path.join(PROJECT_ROOT, 'dataset')
 ARTIFACTS_DIR = os.path.join(PROJECT_ROOT, 'models')
 os.makedirs(ARTIFACTS_DIR, exist_ok=True)
 def train_and_save(dataset_name, filename, target_col, cat_cols, num_cols):
@@ -89,16 +90,25 @@ def train_and_save(dataset_name, filename, target_col, cat_cols, num_cols):
             ('num', numerical_transformer, num_cols),
             ('cat', categorical_transformer, cat_cols)
         ])
+    rf_model = RandomForestRegressor(
+        n_estimators=100,       
+        max_depth=None,           
+        min_samples_split=2,   
+        random_state=42, 
+        n_jobs=-1,              
+        verbose=1
+    )
+    
+    # Wrap with Log Transformation for robust price prediction
+    log_target_rf = TransformedTargetRegressor(
+        regressor=rf_model,
+        func=np.log1p,
+        inverse_func=np.expm1
+    )
+
     model = Pipeline(steps=[
         ('preprocessor', preprocessor),
-        ('regressor', RandomForestRegressor(
-            n_estimators=100,       
-            max_depth=25,           
-            min_samples_split=10,   
-            random_state=42, 
-            n_jobs=-1,              
-            verbose=1
-        ))
+        ('regressor', log_target_rf)
     ])
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     print(f"   -> Training highly accurate AI Model on {len(X_train)} rows...")
